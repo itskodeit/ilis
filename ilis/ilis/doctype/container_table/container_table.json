@@ -1,0 +1,29 @@
+{
+ "creation": "2022-02-03 12:30:14.117689",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "container_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "container_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Container Number",
+   "options": "Container"
+  }
+ ],
+ "istable": 1,
+ "modified": "2022-02-03 12:38:44.743081",
+ "modified_by": "Administrator",
+ "module": "Ilis",
+ "name": "Container Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

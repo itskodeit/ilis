@@ -1,0 +1,431 @@
+{
+ "creation": "2022-01-17 14:35:47.474597",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "file_open",
+  "documents_received_date",
+  "file_number",
+  "bl_number",
+  "file_type",
+  "column_break_6",
+  "vessel_name",
+  "voyager_no",
+  "shipping_line",
+  "port_of_loading",
+  "eta_port_of_discharges",
+  "discharge_date",
+  "terminal",
+  "container_details_section",
+  "container_number",
+  "container_size",
+  "weight",
+  "column_break_18",
+  "number_of_package",
+  "border",
+  "destination",
+  "description_of_goods",
+  "documentation__tra_section",
+  "manifest_date",
+  "assessment_creation",
+  "wharfage_payment",
+  "duties_and_taxes",
+  "column_break_8",
+  "verification_selectivity",
+  "booking_for_verification",
+  "lodge_for_release",
+  "release_obtained",
+  "shipping_line_process_section",
+  "lodge_do",
+  "do_fee",
+  "do_issued",
+  "column_break_17",
+  "deposit_fee",
+  "container_service_charges",
+  "tcfr_sumatra_charges",
+  "documentation_port_section",
+  "lodge_port_charges",
+  "port_payment",
+  "truck_allocated",
+  "t1_bt_generated",
+  "column_break_25",
+  "t1_bt_approved",
+  "lodge_for_kibali",
+  "loading",
+  "submit_file_to_account",
+  "shipment_tracking_section",
+  "truck_dispatched",
+  "border_arrival_date",
+  "border_dispatched_date",
+  "column_break_34",
+  "arrive_offloading_date",
+  "offloading_date",
+  "received_signed_pod",
+  "return_empty_container_section",
+  "offloading_documents",
+  "demurrage_charges",
+  "offloading_empties_container",
+  "column_break_42",
+  "receive_in_ward_interchange",
+  "refund_of_container_deposit",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "file_open",
+   "fieldtype": "Date",
+   "label": "Transaction Date"
+  },
+  {
+   "fieldname": "documents_received_date",
+   "fieldtype": "Date",
+   "label": "Documents Received Date"
+  },
+  {
+   "fieldname": "file_number",
+   "fieldtype": "Data",
+   "label": "File Number"
+  },
+  {
+   "fieldname": "bl_number",
+   "fieldtype": "Data",
+   "label": "B/L Number"
+  },
+  {
+   "fieldname": "file_type",
+   "fieldtype": "Select",
+   "label": "file type",
+   "options": "Import\nExport"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vessel_name",
+   "fieldtype": "Data",
+   "label": "Vessel Name"
+  },
+  {
+   "fieldname": "voyager_no",
+   "fieldtype": "Data",
+   "label": "Voyager No"
+  },
+  {
+   "fieldname": "shipping_line",
+   "fieldtype": "Select",
+   "label": "Shipping line",
+   "options": "Evergreen\nSafmarine line\nMaersk Line\nEmirates line"
+  },
+  {
+   "fieldname": "port_of_loading",
+   "fieldtype": "Data",
+   "label": "Port of Loading"
+  },
+  {
+   "fieldname": "eta_port_of_discharges",
+   "fieldtype": "Int",
+   "label": "ETA Port of Discharges"
+  },
+  {
+   "fieldname": "discharge_date",
+   "fieldtype": "Date",
+   "label": "Discharge Date"
+  },
+  {
+   "fieldname": "terminal",
+   "fieldtype": "Select",
+   "label": "Terminal",
+   "options": "TICTS\nTPA\nICD"
+  },
+  {
+   "fieldname": "container_details_section",
+   "fieldtype": "Section Break",
+   "label": "Container Details"
+  },
+  {
+   "fieldname": "container_number",
+   "fieldtype": "Data",
+   "label": "Container Number"
+  },
+  {
+   "fieldname": "container_size",
+   "fieldtype": "Select",
+   "label": "Container Size",
+   "options": "40ft\n20ft\nLOOSE"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight "
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "number_of_package",
+   "fieldtype": "Int",
+   "label": "Number of package"
+  },
+  {
+   "fieldname": "border",
+   "fieldtype": "Data",
+   "label": "Border"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "label": "Destination"
+  },
+  {
+   "fieldname": "description_of_goods",
+   "fieldtype": "Small Text",
+   "label": "Description of Goods"
+  },
+  {
+   "fieldname": "documentation__tra_section",
+   "fieldtype": "Section Break",
+   "label": "Documentation  TRA"
+  },
+  {
+   "fieldname": "manifest_date",
+   "fieldtype": "Date",
+   "label": "Manifest Date"
+  },
+  {
+   "fieldname": "assessment_creation",
+   "fieldtype": "Date",
+   "label": "Assessment Creation"
+  },
+  {
+   "fieldname": "wharfage_payment",
+   "fieldtype": "Date",
+   "label": "Wharfage Payment"
+  },
+  {
+   "fieldname": "duties_and_taxes",
+   "fieldtype": "Date",
+   "label": "Duties and taxes"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "verification_selectivity",
+   "fieldtype": "Date",
+   "label": "Verification Selectivity"
+  },
+  {
+   "fieldname": "booking_for_verification",
+   "fieldtype": "Date",
+   "label": "Booking for Verification"
+  },
+  {
+   "fieldname": "lodge_for_release",
+   "fieldtype": "Date",
+   "label": "Lodge For Release"
+  },
+  {
+   "fieldname": "release_obtained",
+   "fieldtype": "Date",
+   "label": "Release Obtained"
+  },
+  {
+   "fieldname": "shipping_line_process_section",
+   "fieldtype": "Section Break",
+   "label": "Shipping Line Process"
+  },
+  {
+   "fieldname": "lodge_do",
+   "fieldtype": "Date",
+   "label": "Lodge D/O"
+  },
+  {
+   "fieldname": "do_fee",
+   "fieldtype": "Date",
+   "label": "D/O fee "
+  },
+  {
+   "fieldname": "do_issued",
+   "fieldtype": "Date",
+   "label": "D/O Issued"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deposit_fee",
+   "fieldtype": "Date",
+   "label": "Deposit Fee"
+  },
+  {
+   "fieldname": "container_service_charges",
+   "fieldtype": "Data",
+   "label": "Container Service Charges"
+  },
+  {
+   "fieldname": "tcfr_sumatra_charges",
+   "fieldtype": "Data",
+   "label": "TCFR Sumatra Charges"
+  },
+  {
+   "fieldname": "documentation_port_section",
+   "fieldtype": "Section Break",
+   "label": "Documentation Port"
+  },
+  {
+   "fieldname": "lodge_port_charges",
+   "fieldtype": "Date",
+   "label": "Lodge Port Charges"
+  },
+  {
+   "fieldname": "port_payment",
+   "fieldtype": "Date",
+   "label": "Port Payment"
+  },
+  {
+   "fieldname": "truck_allocated",
+   "fieldtype": "Date",
+   "label": "Truck Allocated"
+  },
+  {
+   "fieldname": "t1_bt_generated",
+   "fieldtype": "Date",
+   "label": "T1 BT Generated"
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "t1_bt_approved",
+   "fieldtype": "Date",
+   "label": "T1 BT Approved"
+  },
+  {
+   "fieldname": "lodge_for_kibali",
+   "fieldtype": "Date",
+   "label": "Lodge for Kibali"
+  },
+  {
+   "fieldname": "loading",
+   "fieldtype": "Date",
+   "label": "Loading"
+  },
+  {
+   "fieldname": "submit_file_to_account",
+   "fieldtype": "Date",
+   "label": "Submit file to Account"
+  },
+  {
+   "fieldname": "shipment_tracking_section",
+   "fieldtype": "Section Break",
+   "label": "Shipment Tracking"
+  },
+  {
+   "fieldname": "truck_dispatched",
+   "fieldtype": "Date",
+   "label": "Truck Dispatched"
+  },
+  {
+   "fieldname": "border_arrival_date",
+   "fieldtype": "Date",
+   "label": "Border Arrival date"
+  },
+  {
+   "fieldname": "border_dispatched_date",
+   "fieldtype": "Date",
+   "label": "Border Dispatched date"
+  },
+  {
+   "fieldname": "column_break_34",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "arrive_offloading_date",
+   "fieldtype": "Date",
+   "label": "Arrive Offloading Date"
+  },
+  {
+   "fieldname": "offloading_date",
+   "fieldtype": "Date",
+   "label": "Offloading Date"
+  },
+  {
+   "fieldname": "received_signed_pod",
+   "fieldtype": "Date",
+   "label": "Received signed POD"
+  },
+  {
+   "fieldname": "return_empty_container_section",
+   "fieldtype": "Section Break",
+   "label": "Return Empty Container"
+  },
+  {
+   "fieldname": "offloading_documents",
+   "fieldtype": "Data",
+   "label": "offloading Documents"
+  },
+  {
+   "fieldname": "demurrage_charges",
+   "fieldtype": "Data",
+   "label": "Demurrage Charges "
+  },
+  {
+   "fieldname": "offloading_empties_container",
+   "fieldtype": "Data",
+   "label": "Offloading Empties Container"
+  },
+  {
+   "fieldname": "column_break_42",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "receive_in_ward_interchange",
+   "fieldtype": "Data",
+   "label": "Receive In ward Interchange"
+  },
+  {
+   "fieldname": "refund_of_container_deposit",
+   "fieldtype": "Data",
+   "label": "Refund of container Deposit"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Booking",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2022-02-03 15:15:58.033270",
+ "modified_by": "Administrator",
+ "module": "Ilis",
+ "name": "Booking",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
