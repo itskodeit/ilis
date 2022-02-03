@@ -17,6 +17,13 @@ def execute(filters=None):
 	for d in report_items:
 		row = {}
 		row['bl_number'] = d.bl_number
+		row['client'] = d.client
+		row['reference_number'] = d.reference_number
+		row['transporter'] = d.transporter
+		row['drivers_name'] = d.drivers_name
+		row['license_number'] = d.license_number
+
+
 		row['truck'] = d.truck
 		row['trailer'] = d.trailer	
 		row['loading_place'] = d.loading_place
@@ -25,11 +32,16 @@ def execute(filters=None):
 		row['package'] = d.package
 		row['amount_per_container'] = d.amount_per_container
 		row['laoding_tons'] = d.laoding_tons
+
 		row['nakonde_arrival'] = d.nakonde_arrival
 		row['gate_pass_nakonde'] = d.gate_pass_nakonde
 		row['tunduma_arrival'] = d.tunduma_arrival
 		row['tunduma_departure_date'] = d.tunduma_departure_date
+
+		row['cfs'] = d.cfs
 		row['arrival_date'] = d.arrival_date
+		row['gate_in_date'] = d.gate_in_date
+		row['carry_in_date'] = d.carry_in_date
 		row['start_offloading'] = d.start_offloading
 		row['end_offloading'] = d.end_offloading
 		row['yard_departure'] = d.yard_departure
@@ -50,6 +62,36 @@ def get_column():
 		{
 			"fieldname":"bl_number",
 			"label": "Bl Number",
+			"fieldtype": "Data",
+			'width': 150
+		},
+		{
+			"fieldname":"client",
+			"label": "Client",
+			"fieldtype": "Data",
+			'width': 150
+		},
+		{
+			"fieldname":"reference_number",
+			"label": "Reference Number",
+			"fieldtype": "Data",
+			'width': 150
+		},
+		{
+			"fieldname":"transporter",
+			"label": "Transporter",
+			"fieldtype": "Data",
+			'width': 150
+		},
+		{
+			"fieldname":"drivers_name",
+			"label": "DRiver ",
+			"fieldtype": "Data",
+			'width': 150
+		},
+		{
+			"fieldname":"license_number",
+			"label": "License",
 			"fieldtype": "Data",
 			'width': 150
 		},
@@ -139,6 +181,18 @@ def get_column():
 			"width": 120,
 		},
 		{
+			"fieldname":"gate_in_date",
+			"label": "Get in Date",
+			"fieldtype": "Date",
+			"width": 120,
+		},
+		{
+			"fieldname":"carry_in_date",
+			"label": "Carry in Date ",
+			"fieldtype": "Date",
+			"width": 120,
+		},
+		{
 			"fieldname":"start_offloading",
 			"label": "Loading Date",
 			"fieldtype": "Date",
@@ -148,6 +202,36 @@ def get_column():
 			"fieldname":"end_offloading",
 			"label": "Offloading Date",
 			"fieldtype": "Date",
+			"width": 120,
+		},
+		{
+			"fieldname":"booking_number",
+			"label": "Booking Number",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"fieldname":"exporter",
+			"label": "Exporter",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"fieldname":"consignee",
+			"label": "Consignee",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"fieldname":"destination",
+			"label": "Destination",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"fieldname":"depot",
+			"label": "Depot",
+			"fieldtype": "Data",
 			"width": 120,
 		},
 		{
@@ -176,10 +260,13 @@ def get_data(filters):
 	where_filter = {"from_date": filters.from_date, "to_date": filters.to_date}
 	where = ""
 
-	data = frappe.db.sql("""select ta.bl_number, ta.truck, ta.trailer, ta.loading_place,
+	data = frappe.db.sql("""select ta.bl_number, ta.client, ta.reference_number, ta.transporter,
+		ta.drivers_name, ta.license_number, ta.truck, ta.trailer, ta.loading_place,
 		ta.loading_date, ta.cargo, ta.package, ta.amount_per_container, ta.laoding_tons,
 		ta.nakonde_arrival, ta.gate_pass_nakonde, ta.tunduma_arrival, ta.tunduma_departure_date,
-		ta.arrival_date, ta.start_offloading, ta.end_offloading, ta.yard_departure,
+		ta.cfs, ta.arrival_date, ta.gate_in_date, ta.carry_in_date, ta.start_offloading,
+		ta.end_offloading, ta.booking_number, ta.exporter, ta.consignee, ta.destination,
+		ta.depot, ta.yard_departure,
 		ta.container_number, ta.pcs, ta.aficd_total, ta.with_container, ta.vgm,
 		ta.after_balance
 
