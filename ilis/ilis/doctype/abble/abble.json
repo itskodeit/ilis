@@ -46,6 +46,8 @@
   "destination",
   "depot",
   "container_number",
+  "stuffing_date",
+  "storage_days",
   "column_break_24",
   "yard_departure",
   "pcs",
@@ -238,8 +240,9 @@
   },
   {
    "fieldname": "booking_number",
-   "fieldtype": "Data",
-   "label": "Booking Number"
+   "fieldtype": "Link",
+   "label": "Booking Number",
+   "options": "Container Release"
   },
   {
    "fieldname": "exporter",
@@ -320,10 +323,22 @@
    "options": "Abble",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "stuffing_date",
+   "fieldtype": "Date",
+   "label": "Stuffing Date"
+  },
+  {
+   "depends_on": "eval:doc.stuffing_date != null",
+   "fieldname": "storage_days",
+   "fieldtype": "Int",
+   "label": "Storage Days with Cargo",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
- "modified": "2022-02-03 19:17:29.372299",
+ "modified": "2022-02-11 20:38:54.085236",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Abble",

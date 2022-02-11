@@ -44,7 +44,14 @@ def execute(filters=None):
 		row['carry_in_date'] = d.carry_in_date
 		row['start_offloading'] = d.start_offloading
 		row['end_offloading'] = d.end_offloading
+
+		row['booking_number'] = d.booking_number
+		row['exporter'] = d.exporter
+		row['consignee'] = d.consignee
+		row['destination'] = d.destination
+		row['depot'] = d.depot
 		row['yard_departure'] = d.yard_departure
+
 		row['container_number'] = d.container_number
 		row['pcs'] = d.pcs
 		row['aficd_total'] = d.aficd_total

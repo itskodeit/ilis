@@ -1,0 +1,111 @@
+{
+ "autoname": "field:booking_number",
+ "creation": "2022-02-11 14:40:21.949740",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "booking_number",
+  "vessel_name",
+  "departure_date",
+  "cfs",
+  "cfs_arrival_date",
+  "column_break_4",
+  "depot",
+  "release_date",
+  "no_of_containers",
+  "cfs_storage_days",
+  "section_break_7",
+  "containers_released"
+ ],
+ "fields": [
+  {
+   "fieldname": "booking_number",
+   "fieldtype": "Data",
+   "label": "Booking Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "vessel_name",
+   "fieldtype": "Data",
+   "label": "Vessel Name"
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "label": "Vessel Departure Date"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "release_date",
+   "fieldtype": "Date",
+   "label": "Release Date"
+  },
+  {
+   "fieldname": "no_of_containers",
+   "fieldtype": "Int",
+   "label": "Number of Containers"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "containers_released",
+   "fieldtype": "Table",
+   "label": "Containers Released",
+   "options": "Container Export",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cfs",
+   "fieldtype": "Select",
+   "label": "CFS",
+   "options": "MOFED\nAFICD\nALHUSHUM"
+  },
+  {
+   "fieldname": "cfs_arrival_date",
+   "fieldtype": "Date",
+   "label": "CFS Arrival Date"
+  },
+  {
+   "depends_on": "eval:doc.cfs_arrival_date != null",
+   "fieldname": "cfs_storage_days",
+   "fieldtype": "Int",
+   "label": "CFS Storage Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "depot",
+   "fieldtype": "Select",
+   "label": "Depot",
+   "options": "APMT\nTRH\nOthers"
+  }
+ ],
+ "modified": "2022-02-11 21:10:07.790613",
+ "modified_by": "Administrator",
+ "module": "Ilis",
+ "name": "Container Release",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

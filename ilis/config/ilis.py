@@ -22,6 +22,13 @@ def get_data():
 					"description": _("Import & Export File."),
 					"onboard": 1,
 				},
+				{
+					"type": "doctype",
+					"name": "Container Release",
+					"route": "#List/Container Release",
+					"description": _("Import & Export File."),
+					"onboard": 1,
+				},
 				
 			]
 		},
