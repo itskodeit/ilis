@@ -24,7 +24,7 @@
    "fieldname": "size",
    "fieldtype": "Select",
    "label": "Size",
-   "options": "40ft\n20ft\nloose cargo"
+   "options": "40ft\n20ft\n40-HC\n40-Open Top\n45-GP\nloose cargo"
   },
   {
    "fieldname": "release_date",
@@ -46,7 +46,7 @@
    "options": "Available\nNot-Available"
   }
  ],
- "modified": "2022-02-03 17:22:17.296637",
+ "modified": "2022-02-15 11:36:54.658387",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container",

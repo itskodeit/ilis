@@ -11,6 +11,11 @@ frappe.ui.form.on('Container Release', {
 			if(!d.release_date) d.release_date = frm.doc.release_date;
 		});
 		refresh_field("containers_released");
+
+		var aday = new Date();
+		var to_date = aday.toISOString().split('T')[0];
+		frm.set_value("demmurage_count", frappe.datetime.get_day_diff( to_date , frm.doc.release_date));
+		refresh_field(frm.doc.demmurage_count);
 	},
 
 	cfs_arrival_date: function(frm) {

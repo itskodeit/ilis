@@ -1,6 +1,7 @@
 {
  "autoname": "ABB.#####",
  "creation": "2022-01-26 15:42:34.073262",
+ "description": "fs",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -10,6 +11,7 @@
   "reference_number",
   "transporter",
   "drivers_name",
+  "drivers_phone",
   "license_number",
   "truck",
   "trailer",
@@ -21,6 +23,7 @@
   "laoding_tons",
   "loading_place",
   "loading_date",
+  "file_status",
   "truck_container_section_section",
   "containers_on_truck",
   "border_section_section",
@@ -37,10 +40,12 @@
   "gate_in_date",
   "column_break_29",
   "carry_in_date",
+  "crn_received",
   "start_offloading",
   "end_offloading",
   "section_break_27",
   "booking_number",
+  "booking_date",
   "exporter",
   "consignee",
   "destination",
@@ -48,6 +53,10 @@
   "container_number",
   "stuffing_date",
   "storage_days",
+  "custom_release_date",
+  "port_charges_date",
+  "container_delivery_to_port",
+  "payment_cut_off_date",
   "column_break_24",
   "yard_departure",
   "pcs",
@@ -55,6 +64,11 @@
   "with_container",
   "vgm",
   "after_balance",
+  "vessel_departure_date",
+  "shipping_instruction_date",
+  "vgm_submission_date",
+  "scanner_report_confirmation",
+  "scanner_report_confirmation_date",
   "section_break_47",
   "export_container",
   "amended_from"
@@ -64,7 +78,7 @@
    "fieldname": "bl_number",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Bl Number",
+   "label": "Bill of lading Number",
    "reqd": 1
   },
   {
@@ -75,7 +89,7 @@
   {
    "fieldname": "reference_number",
    "fieldtype": "Data",
-   "label": "Reference Number"
+   "label": "Client Reference Number"
   },
   {
    "fieldname": "transporter",
@@ -120,8 +134,9 @@
   },
   {
    "fieldname": "package",
-   "fieldtype": "Data",
-   "label": "Package"
+   "fieldtype": "Select",
+   "label": "Package",
+   "options": "Bags\nPieces\nLoose"
   },
   {
    "fieldname": "amount_per_container",
@@ -202,7 +217,7 @@
    "fieldname": "cfs",
    "fieldtype": "Select",
    "label": "CFS",
-   "options": "MOFED\nAFICD\nALHUSHUM\nOTHERS"
+   "options": "MOFED\nAFICD\nALHUSHUM\nPORT\nOTHERS"
   },
   {
    "fieldname": "arrival_date",
@@ -268,6 +283,7 @@
   {
    "fieldname": "container_number",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Container number",
    "options": "Container"
   },
@@ -335,10 +351,78 @@
    "fieldtype": "Int",
    "label": "Storage Days with Cargo",
    "read_only": 1
+  },
+  {
+   "fieldname": "crn_received",
+   "fieldtype": "Date",
+   "label": "CRN Received Date"
+  },
+  {
+   "fieldname": "drivers_phone",
+   "fieldtype": "Data",
+   "label": "Driver's phone"
+  },
+  {
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "label": "Booking Date"
+  },
+  {
+   "fieldname": "custom_release_date",
+   "fieldtype": "Date",
+   "label": "Custom Release Date"
+  },
+  {
+   "fieldname": "port_charges_date",
+   "fieldtype": "Date",
+   "label": "Port Charges Date"
+  },
+  {
+   "fieldname": "container_delivery_to_port",
+   "fieldtype": "Date",
+   "label": "Container Delivery to Port"
+  },
+  {
+   "fieldname": "payment_cut_off_date",
+   "fieldtype": "Date",
+   "label": "Payment Cut-off Date"
+  },
+  {
+   "fieldname": "vessel_departure_date",
+   "fieldtype": "Date",
+   "label": "Vessel Departure Date"
+  },
+  {
+   "fieldname": "shipping_instruction_date",
+   "fieldtype": "Date",
+   "label": "Shipping Instruction Date"
+  },
+  {
+   "fieldname": "vgm_submission_date",
+   "fieldtype": "Date",
+   "label": "VGM Submission Date"
+  },
+  {
+   "fieldname": "scanner_report_confirmation",
+   "fieldtype": "Select",
+   "label": "Scanner Report Confirmation",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:doc.scanner_report_confirmation == 'No'",
+   "fieldname": "scanner_report_confirmation_date",
+   "fieldtype": "Date",
+   "label": "Scanner Report Confirmation Date"
+  },
+  {
+   "fieldname": "file_status",
+   "fieldtype": "Select",
+   "label": "File Status",
+   "options": "Arrived At the Border\nArrived at CFS\nFinished offloading\nStart Stuffing\nFinished Stuffing\nCFS Departure\nDelivered to Port\nVessel Departure\nOthers"
   }
  ],
  "is_submittable": 1,
- "modified": "2022-02-11 20:38:54.085236",
+ "modified": "2022-02-15 18:55:45.582855",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Abble",

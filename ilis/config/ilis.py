@@ -24,6 +24,13 @@ def get_data():
 				},
 				{
 					"type": "doctype",
+					"name": "Container",
+					"route": "#List/Container",
+					"description": _("Import & Export File."),
+					"onboard": 1,
+				},
+				{
+					"type": "doctype",
 					"name": "Container Release",
 					"route": "#List/Container Release",
 					"description": _("Import & Export File."),
@@ -48,6 +55,12 @@ def get_data():
 					"is_query_report": True,
 					"name": "Container Lifespan Report",
 					"doctype": "Container"
+				},
+				{
+					"type": "report",
+					"is_query_report": True,
+					"name": "Abble Export Summary",
+					"doctype": "Abble"
 				},
 				
 			]

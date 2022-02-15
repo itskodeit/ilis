@@ -46,6 +46,7 @@ def execute(filters=None):
 		row['end_offloading'] = d.end_offloading
 
 		row['booking_number'] = d.booking_number
+		row['shipping_line'] = d.shipping_line
 		row['exporter'] = d.exporter
 		row['consignee'] = d.consignee
 		row['destination'] = d.destination
@@ -80,7 +81,7 @@ def get_column():
 		},
 		{
 			"fieldname":"reference_number",
-			"label": "Reference Number",
+			"label": "Client Reference No",
 			"fieldtype": "Data",
 			'width': 150
 		},
@@ -92,13 +93,13 @@ def get_column():
 		},
 		{
 			"fieldname":"drivers_name",
-			"label": "DRiver ",
+			"label": "Driver ",
 			"fieldtype": "Data",
 			'width': 150
 		},
 		{
 			"fieldname":"license_number",
-			"label": "License",
+			"label": "Driver's License",
 			"fieldtype": "Data",
 			'width': 150
 		},
@@ -143,13 +144,6 @@ def get_column():
 			"label": "Amount per Conatiner",
 			"fieldtype": "float",
 			'width': 150
-		},
-		{
-			"fieldname":"container_number",
-			"label": "Container",
-			"fieldtype": "Link",
-			"options": "Container",
-			'width': 200
 		},
 		{
 			"fieldname":"laoding_tons",
@@ -201,19 +195,39 @@ def get_column():
 		},
 		{
 			"fieldname":"start_offloading",
-			"label": "Loading Date",
+			"label": "Start offLoading Date",
 			"fieldtype": "Date",
 			"width": 120,
 		},
 		{
 			"fieldname":"end_offloading",
-			"label": "Offloading Date",
+			"label": "End Offloading",
 			"fieldtype": "Date",
 			"width": 120,
 		},
 		{
 			"fieldname":"booking_number",
 			"label": "Booking Number",
+			"fieldtype": "Link",
+			"options": 'Container Release',
+			"width": 120,
+		},
+		{
+			"fieldname":"shipping_line",
+			"label": "Shipping Line",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"fieldname":"container_number",
+			"label": "Container",
+			"fieldtype": "Link",
+			"options": "Container",
+			'width': 200
+		},
+		{
+			"fieldname":"exporter",
+			"label": "Exporter",
 			"fieldtype": "Data",
 			"width": 120,
 		},
@@ -267,17 +281,21 @@ def get_data(filters):
 	where_filter = {"from_date": filters.from_date, "to_date": filters.to_date}
 	where = ""
 
-	data = frappe.db.sql("""select ta.bl_number, ta.client, ta.reference_number, ta.transporter,
+	data = frappe.db.sql("""select tce.container_number, ta.bl_number, ta.client, ta.reference_number, ta.transporter,
 		ta.drivers_name, ta.license_number, ta.truck, ta.trailer, ta.loading_place,
 		ta.loading_date, ta.cargo, ta.package, ta.amount_per_container, ta.laoding_tons,
 		ta.nakonde_arrival, ta.gate_pass_nakonde, ta.tunduma_arrival, ta.tunduma_departure_date,
 		ta.cfs, ta.arrival_date, ta.gate_in_date, ta.carry_in_date, ta.start_offloading,
 		ta.end_offloading, ta.booking_number, ta.exporter, ta.consignee, ta.destination,
 		ta.depot, ta.yard_departure,
-		ta.container_number, ta.pcs, ta.aficd_total, ta.with_container, ta.vgm,
-		ta.after_balance
+		ta.pcs, ta.aficd_total, ta.with_container, ta.vgm,
+		ta.after_balance, tcr.shipping_line
 
-		from `tabAbble` ta 
+		from `tabContainer Export` tce
+		LEFT JOIN 
+			`tabAbble` ta ON tce.parent = ta.name
+		LEFT JOIN 
+			`tabContainer Release` tcr ON ta.booking_number = tcr.name
 		where ta.loading_date BETWEEN %(from_date)s AND %(to_date)s
 		order by ta.loading_date
 		"""+ where, where_filter, as_dict=1)
