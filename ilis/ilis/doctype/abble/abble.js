@@ -41,7 +41,8 @@ frappe.ui.form.on('Abble', {
 	stuffing_date: function(frm) {
 		var aday = new Date();
 		var to_date = aday.toISOString().split('T')[0];
-		frm.set_value("storage_days", frappe.datetime.get_day_diff( to_date , frm.doc.stuffing_date));
+		frm.set_value("storage_days", frappe.datetime.get_day_diff( frappe.datetime.add_days(frm.doc.stuffing_date, 20), to_date));
+		//frm.set_value("storage_days", frappe.datetime.get_day_diff( to_date , frm.doc.stuffing_date));
 		refresh_field(frm.doc.storage_days);
 	},
 });

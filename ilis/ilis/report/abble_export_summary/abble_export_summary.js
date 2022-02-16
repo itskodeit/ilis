@@ -31,7 +31,7 @@ frappe.query_reports["Abble Export Summary"] = {
             value = "<span style='color:red!important;font-weight:bold'>" + value + "</span>";
 
      }
-    if (data.free_days < 17 && column.id == 'free_days' ) {
+    if (data.free_days < 16 && column.id == 'free_days' ) {
             value = "<span style='color:red!important;font-weight:bold'>" + value + "</span>";
 
     }

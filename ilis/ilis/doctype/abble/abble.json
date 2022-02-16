@@ -83,8 +83,9 @@
   },
   {
    "fieldname": "client",
-   "fieldtype": "Data",
-   "label": "Client"
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
   },
   {
    "fieldname": "reference_number",
@@ -349,7 +350,7 @@
    "depends_on": "eval:doc.stuffing_date != null",
    "fieldname": "storage_days",
    "fieldtype": "Int",
-   "label": "Storage Days with Cargo",
+   "label": "Storage Days left(with Cargo)",
    "read_only": 1
   },
   {
@@ -422,7 +423,7 @@
   }
  ],
  "is_submittable": 1,
- "modified": "2022-02-15 18:55:45.582855",
+ "modified": "2022-02-16 12:41:05.255522",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Abble",

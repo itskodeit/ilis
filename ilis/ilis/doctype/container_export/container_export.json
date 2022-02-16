@@ -5,7 +5,10 @@
  "engine": "InnoDB",
  "field_order": [
   "container_number",
-  "release_date"
+  "release_date",
+  "container_cfs_arrival_date",
+  "cfs_free_storage_days_left",
+  "demurrage_free_days_left"
  ],
  "fields": [
   {
@@ -21,10 +24,27 @@
    "in_list_view": 1,
    "label": "Release Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "container_cfs_arrival_date",
+   "fieldtype": "Date",
+   "label": "Container CFS Arrival Date"
+  },
+  {
+   "fieldname": "cfs_free_storage_days_left",
+   "fieldtype": "Int",
+   "label": "CFS Free Storage Days Left",
+   "read_only": 1
+  },
+  {
+   "fieldname": "demurrage_free_days_left",
+   "fieldtype": "Int",
+   "label": "Demurrage Free Days Left",
+   "read_only": 1
   }
  ],
  "istable": 1,
- "modified": "2022-02-03 19:18:04.345006",
+ "modified": "2022-02-16 12:00:20.928627",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container Export",
