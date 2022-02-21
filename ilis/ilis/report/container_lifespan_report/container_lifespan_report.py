@@ -17,9 +17,16 @@ def execute(filters=None):
 	report_items = get_data(filters)
 	for d in report_items:
 		row = {}
+		row['booking_number'] = d.name
+		row['shipping_line'] = d.shipping_line
 		row['container_number'] = d.container_number
+
 		row['release_date'] = d.release_date
-		
+		row['demmurage_count']= d.demmurage_count
+
+		row['cfs_arrival_date'] = d.cfs_arrival_date
+		row['cfs_storage_days']= d.cfs_storage_days
+
 		var_today = getdate(nowdate())
 		row['status_days'] = date_diff(var_today, d.release_date)
 		
@@ -35,6 +42,19 @@ def execute(filters=None):
 def get_column():
 	return [
 		{
+			"fieldname":"booking_number",
+			"label": "Booking Number",
+			"fieldtype": "Link",
+			"options": "Container Release",
+			'width': 150
+		},
+		{
+			"fieldname":"shipping_line",
+			"label": "Shipping Line",
+			"fieldtype": "Data",
+			'width': 150
+		},
+		{
 			"fieldname":"container_number",
 			"label": "Container Number",
 			"fieldtype": "Data",
@@ -44,11 +64,23 @@ def get_column():
 			"fieldname":"release_date",
 			"label": "Release Date",
 			"fieldtype": "Date",
-			"width": 120,
+			"width": 150,
 		},
 		{
-			"fieldname":"status_days",
-			"label": "Status Days",
+			"fieldname":"demmurage_count",
+			"label": "Free Demmurage Days",
+			"fieldtype": "Data",
+			'width': 150
+		},
+		{
+			"fieldname":"cfs_arrival_date",
+			"label": "CFS Arrival Date",
+			"fieldtype": "Date",
+			"width": 150,
+		},
+		{
+			"fieldname":"cfs_storage_days",
+			"label": "Free Storage Days",
 			"fieldtype": "Data",
 			'width': 150
 		},
@@ -66,10 +98,13 @@ def get_data(filters):
 	where_filter = {"from_date": filters.from_date, "to_date": filters.to_date}
 	where = ""
 
-	data = frappe.db.sql("""select ta.container_number, ta.release_date
+	data = frappe.db.sql("""select tce.container_number, tr.release_date, tr.cfs_storage_days,
+		tr.demmurage_count, tr.cfs_arrival_date, tr.name, tr.shipping_line
 
-		from `tabContainer` ta 
-		where ta.release_date BETWEEN %(from_date)s AND %(to_date)s
-		order by ta.release_date
+		from `tabContainer Export` tce
+		LEFT JOIN
+			`tabContainer Release` tr ON tce.parent = tr.name
+		where tr.release_date BETWEEN %(from_date)s AND %(to_date)s
+		order by tr.release_date
 		"""+ where, where_filter, as_dict=1)
 	return data

@@ -69,6 +69,12 @@ def execute(filters=None):
 		row['cfs'] = d.file_status
 		row['file_status'] = d.file_status
 
+		row['custom_release_date'] = d.custom_release_date
+		row['loading_permission'] = d.loading_permission
+
+		row['ebs_received'] = d.ebs_received
+		row['ticts_delivery_date'] = d.ticts_delivery_date
+
 		row['container_number'] = d.container_number
 		row['pcs'] = d.pcs
 		row['aficd_total'] = d.aficd_total
@@ -76,6 +82,8 @@ def execute(filters=None):
 		row['vgm'] = d.vgm
 		row['after_balance'] = d.after_balance
 		row['scanner_report_confirmation_date'] = d.scanner_report_confirmation_date
+		row['scanner_check_person'] = d.scanner_check_person
+
 
 		data.append(row)
 
@@ -103,6 +111,12 @@ def get_column():
 			'width': 150
 		},
 		{
+			"fieldname":"exporter",
+			"label": "Shipper Name",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
 			"fieldname":"consignee",
 			"label": "Consignee",
 			"fieldtype": "Data",
@@ -115,11 +129,12 @@ def get_column():
 			"width": 120,
 		},
 		{
-			"fieldname":"consignee",
+			"fieldname":"after_balance",
 			"label": "Balance",
 			"fieldtype": "Data",
 			"width": 120,
 		},
+
 		{
 			"fieldname":"consignee",
 			"label": "TARE",
@@ -139,15 +154,15 @@ def get_column():
 			"width": 120,
 		},
 		{
-			"fieldname":"cargo",
+			"fieldname":"custom_release_date",
 			"label": "Custom Release",
-			"fieldtype": "Data",
+			"fieldtype": "Date",
 			"width": 120,
 		},
 		{
-			"fieldname":"cargo",
+			"fieldname":"loading_permission",
 			"label": "Loading Permission",
-			"fieldtype": "Data",
+			"fieldtype": "Date",
 			"width": 120,
 		},
 		{
@@ -157,7 +172,7 @@ def get_column():
 			"width": 120,
 		},
 		{
-			"fieldname":"cargo",
+			"fieldname":"ebs_received",
 			"label": "EBS Received Date",
 			"fieldtype": "Data",
 			"width": 120,
@@ -169,9 +184,9 @@ def get_column():
 			"width": 120,
 		},
 		{
-			"fieldname":"cargo",
+			"fieldname":"ticts_delivery_date",
 			"label": "TICTS Delivery Date",
-			"fieldtype": "Data",
+			"fieldtype": "Date",
 			"width": 120,
 		},
 		{
@@ -187,9 +202,9 @@ def get_column():
 			"width": 120,
 		},
 		{
-			"fieldname":"scanner_report_confirmation_date",
+			"fieldname":"scanner_check_person",
 			"label": "Scanner Report Check Person",
-			"fieldtype": "Date",
+			"fieldtype": "Data",
 			"width": 120,
 		},
 		{
@@ -229,9 +244,9 @@ def get_column():
 			"width": 120,
 		},
 		{
-			"fieldname":"cfs",
+			"fieldname":"arrival_date",
 			"label": "CFS ",
-			"fieldtype": "Data",
+			"fieldtype": "Date",
 			"width": 120,
 		},
 		{
@@ -434,7 +449,9 @@ def get_data(filters):
 		ta.end_offloading, ta.booking_number, ta.exporter, ta.consignee, ta.destination,
 		ta.depot, ta.yard_departure, ta.stuffing_date, ta.port_charges_date,
 		ta.pcs, ta.aficd_total, ta.with_container, ta.vgm, ta.shipping_instruction_date,
-		ta.after_balance, ta.scanner_report_confirmation_date, tcr.shipping_line,
+		ta.after_balance, ta.scanner_report_confirmation_date, ta.scanner_check_person,
+		ta.custom_release_date,
+		ta.loading_permission, ta.ebs_received, ta.ticts_delivery_date, tcr.shipping_line,
 		tcr.cfs_arrival_date
 
 		from `tabContainer Export` tce

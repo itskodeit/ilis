@@ -1,4 +1,5 @@
 {
+ "actions": [],
  "autoname": "ABB.#####",
  "creation": "2022-01-26 15:42:34.073262",
  "description": "fs",
@@ -54,6 +55,9 @@
   "stuffing_date",
   "storage_days",
   "custom_release_date",
+  "loading_permission",
+  "ebs_received",
+  "ticts_delivery_date",
   "port_charges_date",
   "container_delivery_to_port",
   "payment_cut_off_date",
@@ -69,9 +73,11 @@
   "vgm_submission_date",
   "scanner_report_confirmation",
   "scanner_report_confirmation_date",
+  "scanner_check_person",
   "section_break_47",
   "export_container",
-  "amended_from"
+  "amended_from",
+  "data_70"
  ],
  "fields": [
   {
@@ -410,7 +416,7 @@
    "options": "No\nYes"
   },
   {
-   "depends_on": "eval:doc.scanner_report_confirmation == 'No'",
+   "depends_on": "eval:doc.scanner_report_confirmation == 'Yes'",
    "fieldname": "scanner_report_confirmation_date",
    "fieldtype": "Date",
    "label": "Scanner Report Confirmation Date"
@@ -420,10 +426,36 @@
    "fieldtype": "Select",
    "label": "File Status",
    "options": "Arrived At the Border\nArrived at CFS\nFinished offloading\nStart Stuffing\nFinished Stuffing\nCFS Departure\nDelivered to Port\nVessel Departure\nOthers"
+  },
+  {
+   "fieldname": "loading_permission",
+   "fieldtype": "Date",
+   "label": "Loading Permission"
+  },
+  {
+   "fieldname": "ebs_received",
+   "fieldtype": "Date",
+   "label": "EBS Received"
+  },
+  {
+   "fieldname": "ticts_delivery_date",
+   "fieldtype": "Date",
+   "label": "TICTS Delivery Date"
+  },
+  {
+   "fieldname": "data_70",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.scanner_report_confirmation == 'Yes'",
+   "fieldname": "scanner_check_person",
+   "fieldtype": "Data",
+   "label": "Scanner Check Person"
   }
  ],
  "is_submittable": 1,
- "modified": "2022-02-16 12:41:05.255522",
+ "links": [],
+ "modified": "2022-02-21 15:15:02.690217",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Abble",
