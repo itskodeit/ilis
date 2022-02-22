@@ -1,0 +1,32 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "condition": "doc.storage_days <= 5",
+ "creation": "2022-02-16 18:47:11.332063",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Abble",
+ "enabled": 1,
+ "event": "Custom",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "{% if doc.storage_days < 0 %}\n    Free storage days for stuffed container have ended, Already incurred {{doc.storage_days}} Charged days.\n{% elif doc.storage_days <= 5 %}\n    Be ware only {{doc.storage_days}} free storage days left for stuffed container.\n{% else %}\n    Free storage {{doc.storage_days}} days left for stuffed container.\n{% endif %}\n",
+ "modified": "2022-02-22 09:54:07.418131",
+ "modified_by": "Administrator",
+ "module": "Ilis",
+ "name": "Demurrage Alert",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "",
+   "receiver_by_role": "All"
+  },
+  {
+   "receiver_by_document_field": "owner"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "{{ doc.name}} Demurrage Alert"
+}

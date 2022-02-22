@@ -424,6 +424,7 @@
   {
    "fieldname": "file_status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "File Status",
    "options": "Arrived At the Border\nArrived at CFS\nFinished offloading\nStart Stuffing\nFinished Stuffing\nCFS Departure\nDelivered to Port\nVessel Departure\nOthers"
   },
@@ -455,7 +456,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2022-02-21 15:15:02.690217",
+ "modified": "2022-02-22 10:28:02.713254",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Abble",

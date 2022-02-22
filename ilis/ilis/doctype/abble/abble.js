@@ -4,13 +4,13 @@
 frappe.ui.form.on('Abble', {
 	refresh: function(frm) {
 		frm.add_custom_button(__("Get Containers"), function() {
-            show_sinv_dialog(frm);
+            show_container_dialog(frm);
         })
 
         frm.fields_dict["export_container"].grid.add_custom_button(__('Get Containers'), 
 			function() {
 				//frappe.msgprint(__("GetCo"));
-				show_sinv_dialog(frm);
+				show_container_dialog(frm);
         });
         //frm.fields_dict["export_container"].grid.grid_buttons.find('.btn-custom').removeClass('btn-default').addClass('btn-primary');
 
@@ -48,20 +48,20 @@ frappe.ui.form.on('Abble', {
 });
 
 
-function show_sinv_dialog(frm) {
+function show_container_dialog(frm) {
    frappe.prompt([
       {'fieldname': 'booking_number', 'fieldtype': 'Link', 'label': 'Container Release', 'reqd': 1, 'options': 'Container Release'}  
    ],
    function(booking_number){
       console.log(booking_number.booking_number);
-      get_items_from_sinv(booking_number.booking_number);
+      get_container_from_release(booking_number.booking_number);
    },
    'Get Containers from Release',
    'Get Containers'
   )
 }
 
-function get_items_from_sinv(booking_number) {
+function get_container_from_release(booking_number) {
   frappe.call({
     "method": "frappe.client.get",
     "args": {
