@@ -3,7 +3,7 @@
 
 frappe.ui.form.on('Container Release', {
 	refresh: function(frm) {
-
+		console.log(frm);
 	},
 
 	release_date: function(frm) {

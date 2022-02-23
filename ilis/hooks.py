@@ -116,10 +116,9 @@ app_license = "MIT"
 # Overriding Methods
 # ------------------------------
 #
-override_whitelisted_methods = {
+# override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "ilis.event.get_events"
-	"frappe.email.doctype.notification.get_documents_for_today": "ilis.custom_scripts.notification.notification.get_documents_for_today",
-}
+#}
 
 #
 # each overriding function accepts a `data` argument;

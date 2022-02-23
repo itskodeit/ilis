@@ -12,12 +12,14 @@
   "departure_date",
   "cfs",
   "cfs_arrival_date",
+  "export_reference",
   "column_break_4",
   "depot",
   "release_date",
   "no_of_containers",
   "cfs_storage_days",
   "demmurage_count",
+  "stuffing_date",
   "section_break_7",
   "containers_released"
  ],
@@ -103,10 +105,25 @@
    "in_list_view": 1,
    "label": "Free Days Left (Demurrage)",
    "read_only": 1
+  },
+  {
+   "fieldname": "export_reference",
+   "fieldtype": "Link",
+   "label": "Export Reference",
+   "options": "Abble",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "export_reference.stuffing_date",
+   "fieldname": "stuffing_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Stuffing Date",
+   "read_only": 1
   }
  ],
  "links": [],
- "modified": "2022-02-21 15:32:23.926463",
+ "modified": "2022-02-23 11:17:58.834326",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container Release",

@@ -31,7 +31,16 @@ def execute(filters=None):
 		row['status_days'] = date_diff(var_today, d.release_date)
 		
 		# Think of adding a warning if status days > 25
-		row['status'] = "Expired" if int(row['status_days']) >= 30 else "Active"
+		if d.demmurage_count>0 and d.cfs_storage_days>0:
+			row['status'] = "Active"
+		elif d.demmurage_count < 0 and d.cfs_storage_days < 0:
+			row['status'] = "Expired"
+		elif d.demmurage_count < 0:
+			row['status'] = "Demurrage Expired"
+		else:
+			row['status'] = "Storage Expired"
+
+		#row['status'] = "Expired" if int(row['status_days']) >= 30 else "Active"
 		
 
 		data.append(row)

@@ -19,3 +19,10 @@ class Abble(Document):
 			doc.update({"status": "Not-Available"}, )
 			doc.save()
 
+	def validate(self):
+		if self.booking_number:
+			doc = frappe.get_doc("Container Release", self.booking_number)
+			doc.export_reference = self.name
+			# if self.stuffing_date:
+			# 	doc.stuffing_date = self.stuffing_date
+			doc.save()

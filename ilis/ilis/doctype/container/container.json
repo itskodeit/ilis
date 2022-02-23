@@ -1,4 +1,6 @@
 {
+ "actions": [],
+ "allow_import": 1,
  "autoname": "field:container_number",
  "creation": "2022-01-26 15:35:20.745352",
  "doctype": "DocType",
@@ -46,7 +48,8 @@
    "options": "Available\nNot-Available"
   }
  ],
- "modified": "2022-02-15 11:36:54.658387",
+ "links": [],
+ "modified": "2022-02-23 14:13:30.901664",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container",
