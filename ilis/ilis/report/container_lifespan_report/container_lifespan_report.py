@@ -117,3 +117,10 @@ def get_data(filters):
 		order by tr.release_date
 		"""+ where, where_filter, as_dict=1)
 	return data
+
+def validate_container(self):
+	if container_number:
+		self.export_reference = ""
+		self.shipping_line = ""
+		return self.container_number
+	return self.container_number

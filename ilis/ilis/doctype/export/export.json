@@ -1,7 +1,7 @@
 {
  "actions": [],
- "autoname": "ABB.#####",
- "creation": "2022-01-26 15:42:34.073262",
+ "autoname": "EXP.#####",
+ "creation": "2022-02-25 09:07:25.414542",
  "description": "fs",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -51,32 +51,33 @@
   "start_offloading",
   "end_offloading",
   "stuffing_date",
-  "storage_days",
   "weighing_section",
   "aficd_total",
   "with_container",
   "vgm",
-  "column_break_49",
+  "column_break_48",
   "after_balance",
   "pcs",
   "section_break_27",
   "shipping_line",
   "vessel_name",
   "voyage_number",
-  "vessel_departure_date",
-  "column_break_56",
   "booking_number",
   "booking_date",
+  "column_break_41",
+  "port_of_loading",
+  "departure_date",
   "destination",
   "port_section",
   "port_charges_date",
   "container_delivery_to_port",
-  "column_break_71",
+  "column_break_64",
   "scanner_report_confirmation",
   "scanner_report_confirmation_date",
   "scanner_check_person",
-  "section_break_45",
+  "section_break_41",
   "depot",
+  "storage_days",
   "custom_release_date",
   "loading_permission",
   "ebs_received",
@@ -84,6 +85,7 @@
   "payment_cut_off_date",
   "column_break_24",
   "yard_departure",
+  "vessel_departure_date",
   "shipping_instruction_date",
   "vgm_submission_date",
   "section_break_47",
@@ -95,8 +97,7 @@
    "fieldname": "bl_number",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Bill of lading Number",
-   "reqd": 1
+   "label": "Bill of lading Number"
   },
   {
    "fieldname": "client",
@@ -119,6 +120,11 @@
    "fieldname": "drivers_name",
    "fieldtype": "Data",
    "label": "Driver's Name"
+  },
+  {
+   "fieldname": "drivers_phone",
+   "fieldtype": "Data",
+   "label": "Driver's phone"
   },
   {
    "fieldname": "license_number",
@@ -170,6 +176,13 @@
    "fieldname": "loading_date",
    "fieldtype": "Date",
    "label": "Loading Date"
+  },
+  {
+   "fieldname": "file_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "File Status",
+   "options": "Arrived At the Border\nArrived at CFS\nFinished offloading\nStart Stuffing\nFinished Stuffing\nCFS Departure\nDelivered to Port\nVessel Departure\nOthers"
   },
   {
    "fieldname": "truck_container_section_section",
@@ -228,9 +241,9 @@
   },
   {
    "fieldname": "cfs",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "CFS",
-   "options": "MOFED\nAFICD\nALHUSHUM\nPORT\nOTHERS"
+   "options": "CFS"
   },
   {
    "fieldname": "arrival_date",
@@ -250,6 +263,11 @@
    "fieldname": "carry_in_date",
    "fieldtype": "Date",
    "label": "Carry in Date"
+  },
+  {
+   "fieldname": "crn_received",
+   "fieldtype": "Date",
+   "label": "CRN Received Date"
   },
   {
    "fieldname": "start_offloading",
@@ -273,6 +291,11 @@
    "options": "Container Release"
   },
   {
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "label": "Booking Date"
+  },
+  {
    "fieldname": "exporter",
    "fieldtype": "Data",
    "label": "Exporter"
@@ -292,6 +315,53 @@
    "fieldtype": "Select",
    "label": "Depot",
    "options": "APMT\nTRH\nOthers"
+  },
+  {
+   "fieldname": "stuffing_date",
+   "fieldtype": "Date",
+   "label": "Stuffing Date"
+  },
+  {
+   "depends_on": "eval:doc.stuffing_date != null",
+   "fieldname": "storage_days",
+   "fieldtype": "Int",
+   "label": "Storage Days left(with Cargo)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "custom_release_date",
+   "fieldtype": "Date",
+   "label": "Custom Release Date"
+  },
+  {
+   "fieldname": "loading_permission",
+   "fieldtype": "Date",
+   "label": "Loading Permission"
+  },
+  {
+   "fieldname": "ebs_received",
+   "fieldtype": "Date",
+   "label": "EBS Received"
+  },
+  {
+   "fieldname": "ticts_delivery_date",
+   "fieldtype": "Date",
+   "label": "TICTS Delivery Date"
+  },
+  {
+   "fieldname": "port_charges_date",
+   "fieldtype": "Date",
+   "label": "Port Charges Date"
+  },
+  {
+   "fieldname": "container_delivery_to_port",
+   "fieldtype": "Date",
+   "label": "Container Delivery to Port"
+  },
+  {
+   "fieldname": "payment_cut_off_date",
+   "fieldtype": "Date",
+   "label": "Payment Cut-off Date"
   },
   {
    "fieldname": "column_break_24",
@@ -328,72 +398,6 @@
    "label": "After Balance"
   },
   {
-   "fieldname": "section_break_47",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "export_container",
-   "fieldtype": "Table",
-   "label": "Export Container",
-   "options": "Container Export"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Abble",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "stuffing_date",
-   "fieldtype": "Date",
-   "label": "Stuffing Date"
-  },
-  {
-   "depends_on": "eval:doc.stuffing_date != null",
-   "fieldname": "storage_days",
-   "fieldtype": "Int",
-   "label": "Storage Days left(with Cargo)",
-   "read_only": 1
-  },
-  {
-   "fieldname": "crn_received",
-   "fieldtype": "Date",
-   "label": "CRN Received Date"
-  },
-  {
-   "fieldname": "drivers_phone",
-   "fieldtype": "Data",
-   "label": "Driver's phone"
-  },
-  {
-   "fieldname": "booking_date",
-   "fieldtype": "Date",
-   "label": "Booking Date"
-  },
-  {
-   "fieldname": "custom_release_date",
-   "fieldtype": "Date",
-   "label": "Custom Release Date"
-  },
-  {
-   "fieldname": "port_charges_date",
-   "fieldtype": "Date",
-   "label": "Port Charges Date"
-  },
-  {
-   "fieldname": "container_delivery_to_port",
-   "fieldtype": "Date",
-   "label": "Container Delivery to Port"
-  },
-  {
-   "fieldname": "payment_cut_off_date",
-   "fieldtype": "Date",
-   "label": "Payment Cut-off Date"
-  },
-  {
    "fieldname": "vessel_departure_date",
    "fieldtype": "Date",
    "label": "Vessel Departure Date"
@@ -421,72 +425,38 @@
    "label": "Scanner Report Confirmation Date"
   },
   {
-   "fieldname": "file_status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "File Status",
-   "options": "Arrived At the Border\nArrived at CFS\nFinished offloading\nStart Stuffing\nFinished Stuffing\nCFS Departure\nDelivered to Port\nVessel Departure\nOthers"
-  },
-  {
-   "fieldname": "loading_permission",
-   "fieldtype": "Date",
-   "label": "Loading Permission"
-  },
-  {
-   "fieldname": "ebs_received",
-   "fieldtype": "Date",
-   "label": "EBS Received"
-  },
-  {
-   "fieldname": "ticts_delivery_date",
-   "fieldtype": "Date",
-   "label": "TICTS Delivery Date"
-  },
-  {
    "depends_on": "eval:doc.scanner_report_confirmation == 'Yes'",
    "fieldname": "scanner_check_person",
    "fieldtype": "Data",
    "label": "Scanner Check Person"
   },
   {
-   "fieldname": "transporter_section_section",
-   "fieldtype": "Section Break",
-   "label": "Transporter Section"
-  },
-  {
-   "fieldname": "column_break_18",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_45",
+   "fieldname": "section_break_47",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "column_break_11",
-   "fieldtype": "Column Break"
+   "fieldname": "export_container",
+   "fieldtype": "Table",
+   "label": "Export Container",
+   "options": "Container Export"
   },
   {
-   "fieldname": "loading_section",
-   "fieldtype": "Section Break",
-   "label": "Loading Section"
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Export",
+   "print_hide": 1,
+   "read_only": 1
   },
   {
-   "fieldname": "weighing_section",
-   "fieldtype": "Section Break",
-   "label": "Weighing Information"
-  },
-  {
-   "fieldname": "column_break_49",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "port_section",
-   "fieldtype": "Section Break",
-   "label": "Port"
-  },
-  {
-   "fieldname": "column_break_71",
-   "fieldtype": "Column Break"
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Export",
+   "print_hide": 1,
+   "read_only": 1
   },
   {
    "fieldname": "shipping_line",
@@ -505,7 +475,57 @@
    "label": "Voyage Number"
   },
   {
-   "fieldname": "column_break_56",
+   "fieldname": "section_break_41",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_41",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "port_of_loading",
+   "fieldtype": "Data",
+   "label": "Port of Loading"
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "label": "Departure Date"
+  },
+  {
+   "fieldname": "transporter_section_section",
+   "fieldtype": "Section Break",
+   "label": "Transporter Section"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "loading_section",
+   "fieldtype": "Section Break",
+   "label": "Loading Section"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weighing_section",
+   "fieldtype": "Section Break",
+   "label": "Weighing"
+  },
+  {
+   "fieldname": "column_break_48",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "port_section",
+   "fieldtype": "Section Break",
+   "label": "Port"
+  },
+  {
+   "fieldname": "column_break_64",
    "fieldtype": "Column Break"
   },
   {
@@ -518,10 +538,10 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2022-02-25 14:50:44.796329",
+ "modified": "2022-02-25 15:12:58.881065",
  "modified_by": "Administrator",
  "module": "Ilis",
- "name": "Abble",
+ "name": "Export",
  "owner": "Administrator",
  "permissions": [
   {

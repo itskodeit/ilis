@@ -19,7 +19,6 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Container Number",
-   "reqd": 1,
    "unique": 1
   },
   {
@@ -49,7 +48,7 @@
   }
  ],
  "links": [],
- "modified": "2022-02-23 14:13:30.901664",
+ "modified": "2022-02-24 15:38:07.256660",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container",
