@@ -51,6 +51,7 @@
   "start_offloading",
   "end_offloading",
   "stuffing_date",
+  "storage_days",
   "weighing_section",
   "aficd_total",
   "with_container",
@@ -66,7 +67,7 @@
   "booking_date",
   "column_break_41",
   "port_of_loading",
-  "departure_date",
+  "vessel_departure_date",
   "destination",
   "port_section",
   "port_charges_date",
@@ -77,7 +78,6 @@
   "scanner_check_person",
   "section_break_41",
   "depot",
-  "storage_days",
   "custom_release_date",
   "loading_permission",
   "ebs_received",
@@ -85,7 +85,6 @@
   "payment_cut_off_date",
   "column_break_24",
   "yard_departure",
-  "vessel_departure_date",
   "shipping_instruction_date",
   "vgm_submission_date",
   "section_break_47",
@@ -322,11 +321,9 @@
    "label": "Stuffing Date"
   },
   {
-   "depends_on": "eval:doc.stuffing_date != null",
    "fieldname": "storage_days",
    "fieldtype": "Int",
-   "label": "Storage Days left(with Cargo)",
-   "read_only": 1
+   "label": "Remaining Days (Stuffed)"
   },
   {
    "fieldname": "custom_release_date",
@@ -398,11 +395,6 @@
    "label": "After Balance"
   },
   {
-   "fieldname": "vessel_departure_date",
-   "fieldtype": "Date",
-   "label": "Vessel Departure Date"
-  },
-  {
    "fieldname": "shipping_instruction_date",
    "fieldtype": "Date",
    "label": "Shipping Instruction Date"
@@ -441,24 +433,6 @@
    "options": "Container Export"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Export",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Export",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
    "fieldname": "shipping_line",
    "fieldtype": "Link",
    "label": "Shipping Line",
@@ -486,11 +460,6 @@
    "fieldname": "port_of_loading",
    "fieldtype": "Data",
    "label": "Port of Loading"
-  },
-  {
-   "fieldname": "departure_date",
-   "fieldtype": "Date",
-   "label": "Departure Date"
   },
   {
    "fieldname": "transporter_section_section",
@@ -534,11 +503,25 @@
    "fieldtype": "Link",
    "label": "Container on Truck",
    "options": "Container"
+  },
+  {
+   "fieldname": "vessel_departure_date",
+   "fieldtype": "Date",
+   "label": "Vessel Departure Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Export",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2022-02-25 15:12:58.881065",
+ "modified": "2022-03-01 13:52:23.626492",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Export",

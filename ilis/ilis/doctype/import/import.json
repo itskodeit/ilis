@@ -1,0 +1,178 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-02-25 16:29:16.841986",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bl_number",
+  "bl_received",
+  "documents_received",
+  "client_section",
+  "shipper",
+  "consignee",
+  "client",
+  "shipping_section",
+  "house_bill_of_lading",
+  "shipping_line",
+  "vessel_name",
+  "voyage_number",
+  "cargo_destination_country",
+  "destination_city",
+  "column_break_15",
+  "port_of_loading",
+  "port_of_discharge",
+  "expected_arrival_date",
+  "actual_arrival_date",
+  "discharge_date",
+  "cfs",
+  "carry_in_date",
+  "demurrage_start_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "bl_number",
+   "fieldtype": "Data",
+   "label": "BL Number"
+  },
+  {
+   "fieldname": "bl_received",
+   "fieldtype": "Date",
+   "label": "BL Received"
+  },
+  {
+   "fieldname": "documents_received",
+   "fieldtype": "Date",
+   "label": "Documents Received"
+  },
+  {
+   "fieldname": "client_section",
+   "fieldtype": "Section Break",
+   "label": "Client"
+  },
+  {
+   "fieldname": "shipper",
+   "fieldtype": "Data",
+   "label": "Shipper"
+  },
+  {
+   "fieldname": "consignee",
+   "fieldtype": "Data",
+   "label": "Consignee"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "shipping_section",
+   "fieldtype": "Section Break",
+   "label": "Shipping"
+  },
+  {
+   "fieldname": "house_bill_of_lading",
+   "fieldtype": "Data",
+   "label": "House Bill of Lading"
+  },
+  {
+   "fieldname": "shipping_line",
+   "fieldtype": "Link",
+   "label": "Shipping Line",
+   "options": "Shipping Line"
+  },
+  {
+   "fieldname": "vessel_name",
+   "fieldtype": "Data",
+   "label": "Vessel Name"
+  },
+  {
+   "fieldname": "voyage_number",
+   "fieldtype": "Data",
+   "label": "Voyage Number"
+  },
+  {
+   "fieldname": "cargo_destination_country",
+   "fieldtype": "Link",
+   "label": "Cargo Destination Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "destination_city",
+   "fieldtype": "Data",
+   "label": "Destination City"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "port_of_loading",
+   "fieldtype": "Link",
+   "label": "Port of Loading",
+   "options": "Port"
+  },
+  {
+   "fieldname": "port_of_discharge",
+   "fieldtype": "Link",
+   "label": "Port of Discharge",
+   "options": "Port"
+  },
+  {
+   "fieldname": "expected_arrival_date",
+   "fieldtype": "Date",
+   "label": "Expected Arrival Date"
+  },
+  {
+   "fieldname": "actual_arrival_date",
+   "fieldtype": "Date",
+   "label": "Actual Arrival Date"
+  },
+  {
+   "fieldname": "discharge_date",
+   "fieldtype": "Date",
+   "label": "Discharge Date"
+  },
+  {
+   "fieldname": "cfs",
+   "fieldtype": "Link",
+   "label": "CFS",
+   "options": "CFS"
+  },
+  {
+   "fieldname": "carry_in_date",
+   "fieldtype": "Date",
+   "label": "Carry In Date"
+  },
+  {
+   "fieldname": "demurrage_start_date",
+   "fieldtype": "Date",
+   "label": "Demurrage Start Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-02-25 16:37:06.843823",
+ "modified_by": "Administrator",
+ "module": "Ilis",
+ "name": "Import",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

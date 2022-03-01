@@ -8,18 +8,26 @@
  "field_order": [
   "booking_number",
   "shipping_line",
-  "vessel_name",
-  "departure_date",
-  "cfs",
-  "cfs_arrival_date",
   "export_reference",
   "column_break_4",
+  "vessel_name",
+  "departure_date",
+  "container_pickup_section",
   "depot",
   "release_date",
+  "column_break_10",
+  "free_days",
   "no_of_containers",
-  "cfs_storage_days",
   "demmurage_count",
+  "cfs_section_section",
+  "cfs",
+  "cfs_arrival_date",
+  "free_days_empty",
+  "cfs_storage_days",
+  "column_break_16",
   "stuffing_date",
+  "free_days_stuffed",
+  "stuffed_counter",
   "section_break_7",
   "containers_released"
  ],
@@ -33,7 +41,6 @@
   {
    "fieldname": "vessel_name",
    "fieldtype": "Data",
-   "hidden": 1,
    "label": "Vessel Name"
   },
   {
@@ -82,7 +89,7 @@
    "fieldname": "cfs_storage_days",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "CFS Storage Days for Empty",
+   "label": "Empty Counter",
    "read_only": 1
   },
   {
@@ -120,10 +127,50 @@
    "hidden": 1,
    "label": "Stuffing Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "free_days",
+   "fieldtype": "Data",
+   "label": "Free Days Given"
+  },
+  {
+   "fieldname": "free_days_empty",
+   "fieldtype": "Data",
+   "label": "Free Days Empty"
+  },
+  {
+   "fieldname": "free_days_stuffed",
+   "fieldtype": "Data",
+   "label": "Free Days Stuffed"
+  },
+  {
+   "fieldname": "cfs_section_section",
+   "fieldtype": "Section Break",
+   "label": "CFS Section"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stuffed_counter",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Stuffed Counter",
+   "read_only": 1
+  },
+  {
+   "fieldname": "container_pickup_section",
+   "fieldtype": "Section Break",
+   "label": "Container Pickup"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
   }
  ],
  "links": [],
- "modified": "2022-02-23 11:17:58.834326",
+ "modified": "2022-03-01 14:47:37.374726",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container Release",

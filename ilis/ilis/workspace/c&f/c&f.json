@@ -16,7 +16,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Export",
+   "label": "Export & Import",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -24,8 +24,8 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Abble Export List",
-   "link_to": "Abble",
+   "label": "Export List",
+   "link_to": "Export",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -92,7 +92,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-02-25 15:21:11.899779",
+ "modified": "2022-03-01 15:05:23.577021",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "C&F",
@@ -102,8 +102,8 @@
  "shortcuts": [
   {
    "doc_view": "List",
-   "label": "Abble List",
-   "link_to": "Abble",
+   "label": "Export List",
+   "link_to": "Export",
    "type": "DocType"
   },
   {
@@ -126,20 +126,20 @@
   },
   {
    "doc_view": "",
-   "label": "Abble Export Summary",
-   "link_to": "Abble Export Summary",
+   "label": "Export Summary Report",
+   "link_to": "Export Summary Report",
    "type": "Report"
   },
   {
    "doc_view": "",
-   "label": "Container Lifespan Report",
-   "link_to": "Container Lifespan Report",
+   "label": "Container Lifecycle Report",
+   "link_to": "Container Lifecycle Report",
    "type": "Report"
   },
   {
    "doc_view": "",
-   "label": "Sample Report 1",
-   "link_to": "Sample Report 1",
+   "label": "Export Sample Report",
+   "link_to": "Export Sample Report",
    "type": "Report"
   }
  ]
