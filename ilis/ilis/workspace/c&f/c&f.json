@@ -6,10 +6,10 @@
  "disable_user_customization": 0,
  "docstatus": 0,
  "doctype": "Workspace",
- "extends_another_page": 0,
+ "extends_another_page": 1,
  "hide_custom": 0,
  "idx": 0,
- "is_default": 0,
+ "is_default": 1,
  "is_standard": 1,
  "label": "C&F",
  "links": [
@@ -92,7 +92,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-03-01 15:05:23.577021",
+ "modified": "2022-03-04 07:27:05.703724",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "C&F",
