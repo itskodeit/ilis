@@ -33,6 +33,15 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Import",
+   "link_to": "Import",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Container Card",
    "link_type": "DocType",
    "onboard": 0,
@@ -92,7 +101,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-03-04 07:27:05.703724",
+ "modified": "2022-03-09 11:53:22.300988",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "C&F",
@@ -104,6 +113,12 @@
    "doc_view": "List",
    "label": "Export List",
    "link_to": "Export",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Import",
+   "link_to": "Import",
    "type": "DocType"
   },
   {

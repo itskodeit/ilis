@@ -8,3 +8,8 @@ from frappe.model.document import Document
 
 class Container(Document):
 	pass
+
+# @frappe.whitelist
+# def validate_container(number):
+# 	if len(number) != 11:
+# 		frappe.msgprint("Container No length not valid:")

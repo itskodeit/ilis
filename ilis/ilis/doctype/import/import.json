@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "IMP.#####",
  "creation": "2022-02-25 16:29:16.841986",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -9,26 +10,79 @@
   "bl_number",
   "bl_received",
   "documents_received",
+  "column_break_4",
+  "import_type",
+  "documents_verified",
   "client_section",
   "shipper",
   "consignee",
   "client",
-  "shipping_section",
-  "house_bill_of_lading",
+  "column_break_11",
   "shipping_line",
   "vessel_name",
   "voyage_number",
-  "cargo_destination_country",
-  "destination_city",
+  "destination",
+  "declaration_section",
+  "documents_recived_declaration",
+  "documents_verified_declaration",
+  "hs_code_received",
   "column_break_15",
-  "port_of_loading",
-  "port_of_discharge",
-  "expected_arrival_date",
-  "actual_arrival_date",
-  "discharge_date",
+  "hs_to_customer",
+  "customer_hs_verification",
+  "hs_submission",
+  "assessment_section",
+  "tra_assessment",
+  "assessment_confirmation",
+  "assessment_finalized",
+  "final_assessment",
+  "column_break_22",
+  "customer_assessment",
+  "customer_confirm_assessment",
+  "assessment_objection",
+  "objection_date",
+  "customer_evidence",
+  "permits_section",
+  "apply_tbs_permit",
+  "permit_invoice",
+  "permit_payment",
+  "column_break_34",
+  "import_permit",
+  "transportation_permit",
+  "shipping_section",
+  "manifest_confirmation",
+  "manifest_comparison",
+  "warfage_submission",
+  "endorsement_date",
+  "lodge_for_invoice",
+  "verify_invoice",
+  "invoice_payment",
+  "delivery_order",
+  "column_break_26",
+  "etd",
+  "atd",
+  "eta",
+  "ata",
+  "etb",
+  "atb",
   "cfs",
   "carry_in_date",
-  "demurrage_start_date"
+  "discharge_date",
+  "demurrage_start_date",
+  "port_section",
+  "book_transport_notification",
+  "inspection_date",
+  "sample_collection",
+  "remarks",
+  "inspection_query",
+  "inspection_query_date",
+  "inspection_query_details",
+  "movement_sheet",
+  "column_break_55",
+  "customs_release",
+  "application_port_charges",
+  "payment_port_charges",
+  "tax_invoice",
+  "loading_permit"
  ],
  "fields": [
   {
@@ -73,11 +127,6 @@
    "label": "Shipping"
   },
   {
-   "fieldname": "house_bill_of_lading",
-   "fieldtype": "Data",
-   "label": "House Bill of Lading"
-  },
-  {
    "fieldname": "shipping_line",
    "fieldtype": "Link",
    "label": "Shipping Line",
@@ -94,46 +143,8 @@
    "label": "Voyage Number"
   },
   {
-   "fieldname": "cargo_destination_country",
-   "fieldtype": "Link",
-   "label": "Cargo Destination Country",
-   "options": "Country"
-  },
-  {
-   "fieldname": "destination_city",
-   "fieldtype": "Data",
-   "label": "Destination City"
-  },
-  {
    "fieldname": "column_break_15",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "port_of_loading",
-   "fieldtype": "Link",
-   "label": "Port of Loading",
-   "options": "Port"
-  },
-  {
-   "fieldname": "port_of_discharge",
-   "fieldtype": "Link",
-   "label": "Port of Discharge",
-   "options": "Port"
-  },
-  {
-   "fieldname": "expected_arrival_date",
-   "fieldtype": "Date",
-   "label": "Expected Arrival Date"
-  },
-  {
-   "fieldname": "actual_arrival_date",
-   "fieldtype": "Date",
-   "label": "Actual Arrival Date"
-  },
-  {
-   "fieldname": "discharge_date",
-   "fieldtype": "Date",
-   "label": "Discharge Date"
   },
   {
    "fieldname": "cfs",
@@ -150,11 +161,324 @@
    "fieldname": "demurrage_start_date",
    "fieldtype": "Date",
    "label": "Demurrage Start Date"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "import_type",
+   "fieldtype": "Select",
+   "label": "Import Type",
+   "options": "local\nTransit"
+  },
+  {
+   "fieldname": "documents_verified",
+   "fieldtype": "Date",
+   "label": "Documents Verified"
+  },
+  {
+   "fieldname": "declaration_section",
+   "fieldtype": "Section Break",
+   "label": "Declaration"
+  },
+  {
+   "fieldname": "documents_recived_declaration",
+   "fieldtype": "Date",
+   "label": "Documents Recived Declaration"
+  },
+  {
+   "fieldname": "documents_verified_declaration",
+   "fieldtype": "Date",
+   "label": "Documents Verified Declaration"
+  },
+  {
+   "fieldname": "hs_code_received",
+   "fieldtype": "Date",
+   "label": "Hs Code Received"
+  },
+  {
+   "fieldname": "hs_to_customer",
+   "fieldtype": "Date",
+   "label": "Hs To Customer"
+  },
+  {
+   "fieldname": "customer_hs_verification",
+   "fieldtype": "Date",
+   "label": "Customer Hs Verification"
+  },
+  {
+   "fieldname": "hs_submission",
+   "fieldtype": "Date",
+   "label": "Hs Submission"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assessment_section",
+   "fieldtype": "Section Break",
+   "label": "Assessment "
+  },
+  {
+   "fieldname": "tra_assessment",
+   "fieldtype": "Date",
+   "label": "Tra Assessment"
+  },
+  {
+   "fieldname": "assessment_confirmation",
+   "fieldtype": "Date",
+   "label": "Assessment Confirmation"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_assessment",
+   "fieldtype": "Date",
+   "label": "Customer Assessment"
+  },
+  {
+   "fieldname": "customer_confirm_assessment",
+   "fieldtype": "Date",
+   "label": "Customer Confirm Assessment"
+  },
+  {
+   "fieldname": "assessment_finalized",
+   "fieldtype": "Select",
+   "label": "Assessment Finalized",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "final_assessment",
+   "fieldtype": "Date",
+   "label": "Final Assessment"
+  },
+  {
+   "fieldname": "assessment_objection",
+   "fieldtype": "Select",
+   "label": "Assessment Objection",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:doc.assessment_objection == \"Yes\"",
+   "fieldname": "objection_date",
+   "fieldtype": "Date",
+   "label": "Objection Date"
+  },
+  {
+   "depends_on": "eval:doc.assessment_objection == \"Yes\"",
+   "fieldname": "customer_evidence",
+   "fieldtype": "Date",
+   "label": "Customer Evidence"
+  },
+  {
+   "fieldname": "port_section",
+   "fieldtype": "Section Break",
+   "label": "Port"
+  },
+  {
+   "fieldname": "book_transport_notification",
+   "fieldtype": "Date",
+   "label": "Book Transport Notification"
+  },
+  {
+   "depends_on": "eval:doc.import_type == \"local\"",
+   "fieldname": "inspection_date",
+   "fieldtype": "Date",
+   "label": "Inspection Date"
+  },
+  {
+   "depends_on": "eval:doc.import_type == \"local\"",
+   "fieldname": "sample_collection",
+   "fieldtype": "Data",
+   "label": "Sample Collection"
+  },
+  {
+   "depends_on": "eval:doc.import_type == \"local\"",
+   "fieldname": "remarks",
+   "fieldtype": "Date",
+   "label": "Remarks"
+  },
+  {
+   "depends_on": "eval:doc.import_type == \"local\"",
+   "fieldname": "inspection_query",
+   "fieldtype": "Select",
+   "label": "Inspection Query",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:doc.inspection_query == \"Yes\"",
+   "fieldname": "inspection_query_date",
+   "fieldtype": "Date",
+   "label": "Inspection Query Date"
+  },
+  {
+   "depends_on": "eval:doc.inspection_query == \"Yes\"",
+   "fieldname": "inspection_query_details",
+   "fieldtype": "Text",
+   "label": "Inspection Query Details"
+  },
+  {
+   "fieldname": "column_break_55",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customs_release",
+   "fieldtype": "Date",
+   "label": "Customs Release"
+  },
+  {
+   "fieldname": "application_port_charges",
+   "fieldtype": "Date",
+   "label": "Application Port Charges"
+  },
+  {
+   "fieldname": "payment_port_charges",
+   "fieldtype": "Date",
+   "label": "Payment Port Charges"
+  },
+  {
+   "fieldname": "tax_invoice",
+   "fieldtype": "Date",
+   "label": "Tax Invoice"
+  },
+  {
+   "fieldname": "loading_permit",
+   "fieldtype": "Date",
+   "label": "Loading Permit"
+  },
+  {
+   "depends_on": "eval:doc.import_type == \"local\"",
+   "fieldname": "permits_section",
+   "fieldtype": "Section Break",
+   "label": "Permits"
+  },
+  {
+   "fieldname": "apply_tbs_permit",
+   "fieldtype": "Date",
+   "label": "Apply TBS Permit"
+  },
+  {
+   "fieldname": "permit_invoice",
+   "fieldtype": "Date",
+   "label": "Permit Invoice"
+  },
+  {
+   "fieldname": "permit_payment",
+   "fieldtype": "Date",
+   "label": "Permit Payment"
+  },
+  {
+   "fieldname": "column_break_34",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "import_permit",
+   "fieldtype": "Date",
+   "label": "Import Permit"
+  },
+  {
+   "fieldname": "transportation_permit",
+   "fieldtype": "Date",
+   "label": "Transportation Permit"
+  },
+  {
+   "fieldname": "manifest_confirmation",
+   "fieldtype": "Date",
+   "label": "Manifest Confirmation"
+  },
+  {
+   "fieldname": "manifest_comparison",
+   "fieldtype": "Date",
+   "label": "Manifest Comparison"
+  },
+  {
+   "fieldname": "warfage_submission",
+   "fieldtype": "Date",
+   "label": "Warfage Submission"
+  },
+  {
+   "fieldname": "endorsement_date",
+   "fieldtype": "Date",
+   "label": "Endorsement Date"
+  },
+  {
+   "fieldname": "etd",
+   "fieldtype": "Date",
+   "label": "ETD(Expected Time of Departure)"
+  },
+  {
+   "fieldname": "atd",
+   "fieldtype": "Date",
+   "label": "ATD(Actual Time of Departure)"
+  },
+  {
+   "fieldname": "eta",
+   "fieldtype": "Date",
+   "label": "ETA(Expected Time of Arrival)"
+  },
+  {
+   "fieldname": "ata",
+   "fieldtype": "Date",
+   "label": "ATA(Actual Time of Arrival)"
+  },
+  {
+   "fieldname": "etb",
+   "fieldtype": "Date",
+   "label": "ETB (Expected Time of Berth)"
+  },
+  {
+   "fieldname": "atb",
+   "fieldtype": "Date",
+   "label": "ATB(Actula Time of Berth)"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lodge_for_invoice",
+   "fieldtype": "Date",
+   "label": "Lodge for Invoice"
+  },
+  {
+   "fieldname": "verify_invoice",
+   "fieldtype": "Date",
+   "label": "Verify Invoice"
+  },
+  {
+   "fieldname": "invoice_payment",
+   "fieldtype": "Date",
+   "label": "Invoice Payment"
+  },
+  {
+   "fieldname": "delivery_order",
+   "fieldtype": "Date",
+   "label": "Delivery Order"
+  },
+  {
+   "depends_on": "eval:doc.import_type == \"Transit\"",
+   "fieldname": "movement_sheet",
+   "fieldtype": "Date",
+   "label": "Prepare T1(Movement Sheet)"
+  },
+  {
+   "fieldname": "discharge_date",
+   "fieldtype": "Date",
+   "label": "Discharge Date"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "label": "Destination"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-02-25 16:37:06.843823",
+ "modified": "2022-03-02 13:55:32.329682",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Import",
