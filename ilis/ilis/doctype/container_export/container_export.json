@@ -1,10 +1,14 @@
 {
+ "actions": [],
  "creation": "2022-02-03 19:16:16.491221",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "container_number",
+  "size",
+  "seal",
+  "weight",
   "release_date",
   "container_cfs_arrival_date",
   "cfs_free_storage_days_left",
@@ -22,8 +26,7 @@
    "fieldname": "release_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Release Date",
-   "reqd": 1
+   "label": "Release Date"
   },
   {
    "fieldname": "container_cfs_arrival_date",
@@ -41,10 +44,27 @@
    "fieldtype": "Int",
    "label": "Demurrage Free Days Left",
    "read_only": 1
+  },
+  {
+   "fieldname": "size",
+   "fieldtype": "Data",
+   "label": "Size"
+  },
+  {
+   "fieldname": "seal",
+   "fieldtype": "Data",
+   "label": "Seal"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Weight"
   }
  ],
  "istable": 1,
- "modified": "2022-02-16 12:00:20.928627",
+ "links": [],
+ "modified": "2022-03-13 11:00:34.250106",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container Export",

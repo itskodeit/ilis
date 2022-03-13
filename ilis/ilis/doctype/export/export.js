@@ -45,6 +45,42 @@ frappe.ui.form.on('Export', {
 		//frm.set_value("storage_days", frappe.datetime.get_day_diff( to_date , frm.doc.stuffing_date));
 		refresh_field(frm.doc.storage_days);
 	},
+	after_balance: function(frm) {
+		$.each(frm.doc.loading_list || [], function(i, d) {
+			if(!d.gross_weight) d.gross_weight = frm.doc.after_balance;
+		});
+		refresh_field("loading_list");
+	},
+	vessel_name: function(frm) {
+		$.each(frm.doc.loading_list || [], function(i, d) {
+			if(!d.vessel) d.vessel = frm.doc.vessel_name;
+		});
+		refresh_field("loading_list");
+	},
+	shipping_line: function(frm) {
+		$.each(frm.doc.loading_list || [], function(i, d) {
+			if(!d.shipping_line) d.shipping_line = frm.doc.shipping_line;
+		});
+		refresh_field("loading_list");
+	},
+	booking_number: function(frm) {
+		$.each(frm.doc.loading_list || [], function(i, d) {
+			if(!d.document_number) d.document_number = frm.doc.booking_number;
+		});
+		refresh_field("loading_list");
+	},
+	cargo: function(frm) {
+		$.each(frm.doc.loading_list || [], function(i, d) {
+			if(!d.commodity) d.commodity = frm.doc.cargo;
+		});
+		refresh_field("loading_list");
+	},
+	loading_place: function(frm) {
+		$.each(frm.doc.loading_list || [], function(i, d) {
+			if(!d.origin) d.origin = frm.doc.loading_place;
+		});
+		refresh_field("loading_list");
+	},
 });
 
 
@@ -80,3 +116,36 @@ function get_container_from_release(booking_number) {
      }
    });
 }
+
+frappe.ui.form.on("Export", "validate", function(frm) {
+	if (frm.doc.gate_in_date < frm.doc.arrival_date) {
+		frappe.msgprint(__("Arrival date cannot be later than Gate in Date"));
+		frappe.validated = false;
+	}
+	if (frm.doc.end_offloading < frm.doc.start_offloading) {
+		frappe.msgprint(__("Start offloading date cannot be later than End offloading Date"));
+		frappe.validated = false;
+	}
+	if (frm.doc.tunduma_departure_date < frm.doc.tunduma_arrival) {
+		frappe.msgprint(__("Tunduma Arrival date cannot be later than Departure"));
+		frappe.validated = false;
+	}
+});
+
+
+frappe.ui.form.on("Loading List", {
+	container_number: function(frm,cdt,cdn) {
+		var row = locals[cdt][cdn];
+		if (frm.doc.booking_number) {
+			row.document_number = frm.doc.booking_number;
+			refresh_field("document_number", cdn, "loading_list");
+		} else {
+			frm.script_manager.copy_from_first_row("loading_list", row, ["document_number"]);
+		}
+	},
+	/*release_date: function(frm, cdt, cdn) {
+		if(!frm.doc.release_date) {
+			erpnext.utils.copy_value_in_all_rows(frm.doc, cdt, cdn, "containers_released", "release_date");
+		}
+	}*/
+});

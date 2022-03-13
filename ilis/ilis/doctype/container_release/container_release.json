@@ -9,6 +9,7 @@
   "booking_number",
   "shipping_line",
   "export_reference",
+  "booking_reference",
   "column_break_4",
   "vessel_name",
   "departure_date",
@@ -94,9 +95,9 @@
   },
   {
    "fieldname": "depot",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Depot",
-   "options": "APMT\nTRH\nOthers"
+   "options": "Depot"
   },
   {
    "fieldname": "shipping_line",
@@ -167,10 +168,16 @@
   {
    "fieldname": "column_break_10",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "booking_reference",
+   "fieldtype": "Link",
+   "label": "Container Booking",
+   "options": "Container Booking"
   }
  ],
  "links": [],
- "modified": "2022-03-01 14:47:37.374726",
+ "modified": "2022-03-11 17:21:30.602139",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container Release",

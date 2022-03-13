@@ -48,6 +48,7 @@
   "column_break_34",
   "import_permit",
   "transportation_permit",
+  "chemical_permit",
   "shipping_section",
   "manifest_confirmation",
   "manifest_comparison",
@@ -65,11 +66,12 @@
   "etb",
   "atb",
   "cfs",
-  "carry_in_date",
   "discharge_date",
+  "carry_in_date",
   "demurrage_start_date",
   "port_section",
   "book_transport_notification",
+  "book_inspection",
   "inspection_date",
   "sample_collection",
   "remarks",
@@ -149,7 +151,7 @@
   {
    "fieldname": "cfs",
    "fieldtype": "Link",
-   "label": "CFS",
+   "label": "ICD",
    "options": "CFS"
   },
   {
@@ -160,6 +162,7 @@
   {
    "fieldname": "demurrage_start_date",
    "fieldtype": "Date",
+   "hidden": 1,
    "label": "Demurrage Start Date"
   },
   {
@@ -351,22 +354,24 @@
    "label": "Loading Permit"
   },
   {
-   "depends_on": "eval:doc.import_type == \"local\"",
    "fieldname": "permits_section",
    "fieldtype": "Section Break",
    "label": "Permits"
   },
   {
+   "depends_on": "eval:doc.import_type == \"local\"",
    "fieldname": "apply_tbs_permit",
    "fieldtype": "Date",
    "label": "Apply TBS Permit"
   },
   {
+   "depends_on": "eval:doc.import_type == \"local\"",
    "fieldname": "permit_invoice",
    "fieldtype": "Date",
    "label": "Permit Invoice"
   },
   {
+   "depends_on": "eval:doc.import_type == \"local\"",
    "fieldname": "permit_payment",
    "fieldtype": "Date",
    "label": "Permit Payment"
@@ -376,11 +381,13 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.import_type == \"local\"",
    "fieldname": "import_permit",
    "fieldtype": "Date",
    "label": "Import Permit"
   },
   {
+   "depends_on": "eval:doc.import_type == \"local\"",
    "fieldname": "transportation_permit",
    "fieldtype": "Date",
    "label": "Transportation Permit"
@@ -474,11 +481,22 @@
    "fieldname": "destination",
    "fieldtype": "Data",
    "label": "Destination"
+  },
+  {
+   "depends_on": "eval:doc.import_type == \"Transit\"",
+   "fieldname": "chemical_permit",
+   "fieldtype": "Date",
+   "label": "Chemical Permit"
+  },
+  {
+   "fieldname": "book_inspection",
+   "fieldtype": "Date",
+   "label": "Book Inspection"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-03-02 13:55:32.329682",
+ "modified": "2022-03-10 17:17:04.001914",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Import",

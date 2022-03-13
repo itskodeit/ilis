@@ -11,7 +11,8 @@
   "size",
   "release_date",
   "weight",
-  "status"
+  "status",
+  "seal"
  ],
  "fields": [
   {
@@ -45,10 +46,15 @@
    "in_list_view": 1,
    "label": "Status",
    "options": "Available\nNot-Available"
+  },
+  {
+   "fieldname": "seal",
+   "fieldtype": "Data",
+   "label": "Seal"
   }
  ],
  "links": [],
- "modified": "2022-02-24 15:38:07.256660",
+ "modified": "2022-03-13 11:01:15.510222",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container",

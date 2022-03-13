@@ -1,7 +1,7 @@
 {
  "category": "Modules",
  "charts": [],
- "creation": "2022-02-24 05:55:05.496269",
+ "creation": "2022-03-11 08:33:27.687885",
  "developer_mode_only": 0,
  "disable_user_customization": 0,
  "docstatus": 0,
@@ -11,7 +11,7 @@
  "idx": 0,
  "is_default": 1,
  "is_standard": 1,
- "label": "C&F",
+ "label": "Abble Export",
  "links": [
   {
    "hidden": 0,
@@ -29,23 +29,6 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Import",
-   "link_to": "Import",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Container Card",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
   },
   {
    "hidden": 0,
@@ -94,8 +77,8 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Depot",
-   "link_to": "Depot",
+   "label": "Shipping Line",
+   "link_to": "Shipping Line",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -103,8 +86,8 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Shipping Line",
-   "link_to": "Shipping Line",
+   "label": "Depot",
+   "link_to": "Depot",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -119,10 +102,10 @@
    "type": "Link"
   }
  ],
- "modified": "2022-03-11 12:53:23.570370",
+ "modified": "2022-03-11 12:51:46.249253",
  "modified_by": "Administrator",
  "module": "Ilis",
- "name": "C&F",
+ "name": "Abble Export",
  "owner": "Administrator",
  "pin_to_bottom": 0,
  "pin_to_top": 1,
@@ -131,12 +114,6 @@
    "doc_view": "List",
    "label": "Export List",
    "link_to": "Export",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Import",
-   "link_to": "Import",
    "type": "DocType"
   },
   {

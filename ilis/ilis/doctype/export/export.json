@@ -59,6 +59,7 @@
   "column_break_48",
   "after_balance",
   "pcs",
+  "yard_departure",
   "section_break_27",
   "shipping_line",
   "vessel_name",
@@ -68,6 +69,7 @@
   "column_break_41",
   "port_of_loading",
   "vessel_departure_date",
+  "discharge_port",
   "destination",
   "port_section",
   "port_charges_date",
@@ -84,11 +86,11 @@
   "ticts_delivery_date",
   "payment_cut_off_date",
   "column_break_24",
-  "yard_departure",
   "shipping_instruction_date",
   "vgm_submission_date",
   "section_break_47",
   "export_container",
+  "loading_list",
   "amended_from"
  ],
  "fields": [
@@ -96,7 +98,7 @@
    "fieldname": "bl_number",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Bill of lading Number"
+   "label": "BL Number"
   },
   {
    "fieldname": "client",
@@ -186,6 +188,7 @@
   {
    "fieldname": "truck_container_section_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Truck Container Section"
   },
   {
@@ -311,9 +314,9 @@
   },
   {
    "fieldname": "depot",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Depot",
-   "options": "APMT\nTRH\nOthers"
+   "options": "Depot"
   },
   {
    "fieldname": "stuffing_date",
@@ -323,6 +326,7 @@
   {
    "fieldname": "storage_days",
    "fieldtype": "Int",
+   "hidden": 1,
    "label": "Remaining Days (Stuffed)"
   },
   {
@@ -367,7 +371,7 @@
   {
    "fieldname": "yard_departure",
    "fieldtype": "Date",
-   "label": "Delivery Date"
+   "label": "Yard departure"
   },
   {
    "fieldname": "pcs",
@@ -517,11 +521,22 @@
    "options": "Export",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "loading_list",
+   "fieldtype": "Table",
+   "label": "Loading List",
+   "options": "Loading List"
+  },
+  {
+   "fieldname": "discharge_port",
+   "fieldtype": "Data",
+   "label": "Port of Discharge "
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2022-03-01 13:52:23.626492",
+ "modified": "2022-03-13 13:14:55.786646",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Export",

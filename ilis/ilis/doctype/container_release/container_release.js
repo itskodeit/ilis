@@ -3,7 +3,10 @@
 
 frappe.ui.form.on('Container Release', {
 	refresh: function(frm) {
-		console.log(frm);
+		//console.log(frm);
+		frm.add_custom_button(__("Get Container Booking"), function() {
+            show_container_dialog(frm);
+        });
 		/*frm.set_value("demmurage_count", frappe.datetime.get_day_diff( frappe.datetime.add_days(frm.doc.release_date, frm.doc.free_days), to_date));
 		refresh_field(frm.doc.demmurage_count);*/
 	},
@@ -80,3 +83,43 @@ frappe.ui.form.on("Container Export", {
 		}
 	}
 });
+
+function show_container_dialog(frm) {
+   frappe.prompt([
+      {'fieldname': 'booking_reference', 'fieldtype': 'Link', 'label': 'Container Booking', 'reqd': 1, 'options': 'Container Booking'},
+    
+   ],
+   function(booking_number){
+      console.log(booking_number.booking_reference);
+      get_container_booking(booking_number.booking_reference);
+   },
+   'Get Containers Booking',
+  )
+}
+
+function get_container_booking(booking_number) {
+  frappe.call({
+    "method": "frappe.client.get",
+    "args": {
+        "doctype": "Container Booking",
+        "name": booking_number
+    },
+    "callback": function(response) {
+         // add items to your child table
+         var sinv = response.message;
+         console.log(sinv.booking_no);
+         console.log(sinv.depot);
+         console.log(sinv.no_of_containers);
+             //var child = cur_frm.add_child('export_container');
+             cur_frm.set_value('booking_number', sinv.booking_no);
+             cur_frm.refresh_field('booking_number');
+
+             cur_frm.set_value('depot', sinv.depot);
+             cur_frm.refresh_field('depot');
+
+             cur_frm.set_value('no_of_containers', sinv.no_of_containers);
+             cur_frm.refresh_field('no_of_containers');
+           
+     }
+   });
+ }
