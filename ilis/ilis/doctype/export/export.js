@@ -118,6 +118,10 @@ function get_container_from_release(booking_number) {
 }
 
 frappe.ui.form.on("Export", "validate", function(frm) {
+	if (frm.doc.tunduma_departure_date < frm.doc.tunduma_arrival) {
+		frappe.msgprint(__("Tunduma Arrival date cannot be later than Departure"));
+		frappe.validated = false;
+	}
 	if (frm.doc.gate_in_date < frm.doc.arrival_date) {
 		frappe.msgprint(__("Arrival date cannot be later than Gate in Date"));
 		frappe.validated = false;
@@ -126,10 +130,11 @@ frappe.ui.form.on("Export", "validate", function(frm) {
 		frappe.msgprint(__("Start offloading date cannot be later than End offloading Date"));
 		frappe.validated = false;
 	}
-	if (frm.doc.tunduma_departure_date < frm.doc.tunduma_arrival) {
-		frappe.msgprint(__("Tunduma Arrival date cannot be later than Departure"));
+	if (frm.doc.end_offloading < frm.doc.start_offloading) {
+		frappe.msgprint(__("Start offloading date cannot be later than End offloading Date"));
 		frappe.validated = false;
 	}
+	
 });
 
 
@@ -148,4 +153,51 @@ frappe.ui.form.on("Loading List", {
 			erpnext.utils.copy_value_in_all_rows(frm.doc, cdt, cdn, "containers_released", "release_date");
 		}
 	}*/
+});
+
+frappe.ui.form.on("Container Export", {
+	container_number: function(frm,cdt,cdn) {
+		
+		var row = locals[cdt][cdn];
+		//doc = frappe.get_doc("Container", row.container_number);
+		//console.log(doc);
+		var doc = {}
+		frappe.call({
+	        method: "frappe.client.get",
+	        args: {
+	            doctype: "Container",
+	            name: row.container_number,
+        	},
+	        callback(r) {
+	            if(r.message) {
+	            	row.type = r.message.size
+	            	row.iso = r.message.iso
+	            	row.size = r.message.size
+	            	row.seal = r.message.seal
+	                console.log(r.message.size);
+	                console.log(r.message.size);
+	                
+	            }
+	        }
+    	});
+    	refresh_field("size", cdn, "export_container");
+    	//console.log(row.size);
+
+		/*row.size = doc.size
+		row.type = doc.size
+		row.seal = doc.seal
+		refresh_field("size", cdn, "export_container");
+		refresh_field("type", cdn, "export_container");
+		refresh_field("seal", cdn, "export_container");
+	*/
+		row.weight = frm.doc.after_balance
+		row.vessel = frm.doc.vessel_name
+		row.shipping_line = frm.doc.shipping_line
+		row.document_number = frm.doc.booking_number
+		row.shipper = frm.doc.client
+		row.commodity = frm.doc.cargo
+		row.pod = frm.doc.discharge_port
+		row.origin = frm.doc.loading_place
+		row.fcl = "FCL"
+	}
 });

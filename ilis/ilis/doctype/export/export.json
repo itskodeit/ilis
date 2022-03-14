@@ -309,8 +309,9 @@
   },
   {
    "fieldname": "destination",
-   "fieldtype": "Data",
-   "label": "Destination"
+   "fieldtype": "Link",
+   "label": "Destination",
+   "options": "Country"
   },
   {
    "fieldname": "depot",
@@ -431,6 +432,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "allow_bulk_edit": 1,
    "fieldname": "export_container",
    "fieldtype": "Table",
    "label": "Export Container",
@@ -462,8 +464,9 @@
   },
   {
    "fieldname": "port_of_loading",
-   "fieldtype": "Data",
-   "label": "Port of Loading"
+   "fieldtype": "Link",
+   "label": "Port of Loading",
+   "options": "Port"
   },
   {
    "fieldname": "transporter_section_section",
@@ -525,18 +528,20 @@
   {
    "fieldname": "loading_list",
    "fieldtype": "Table",
+   "hidden": 1,
    "label": "Loading List",
    "options": "Loading List"
   },
   {
    "fieldname": "discharge_port",
-   "fieldtype": "Data",
-   "label": "Port of Discharge "
+   "fieldtype": "Link",
+   "label": "Port of Discharge ",
+   "options": "Port"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2022-03-13 13:14:55.786646",
+ "modified": "2022-03-14 07:50:09.654913",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Export",

@@ -10,10 +10,12 @@
   "naming_series",
   "booking_no",
   "requested_by",
+  "employee_name",
   "no_of_containers",
   "depot",
   "column_break_5",
   "approver",
+  "approver_name",
   "approval_status",
   "date_of_approval",
   "collected_by",
@@ -88,12 +90,26 @@
    "options": "Pending\nApproved",
    "permlevel": 3,
    "reqd": 1
+  },
+  {
+   "fetch_from": "approver.full_name",
+   "fieldname": "approver_name",
+   "fieldtype": "Data",
+   "label": "Approver Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "requested_by.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-03-11 13:24:21.135460",
+ "modified": "2022-03-14 07:48:32.809104",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container Booking",

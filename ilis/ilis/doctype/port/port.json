@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:port",
  "creation": "2022-02-25 15:09:55.810063",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -13,7 +14,8 @@
   {
    "fieldname": "port",
    "fieldtype": "Data",
-   "label": "Port"
+   "label": "Port",
+   "unique": 1
   },
   {
    "fieldname": "country",
@@ -24,7 +26,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-02-25 15:09:55.810063",
+ "modified": "2022-03-14 04:16:36.169103",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Port",
