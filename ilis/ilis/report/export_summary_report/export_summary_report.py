@@ -83,7 +83,7 @@ def execute(filters=None):
 		row['after_balance'] = d.after_balance
 		row['scanner_report_confirmation_date'] = d.scanner_report_confirmation_date
 		row['scanner_check_person'] = d.scanner_check_person
-
+		row['tear_weight'] = d.tear_weight
 
 		data.append(row)
 
@@ -136,7 +136,7 @@ def get_column():
 		},
 
 		{
-			"fieldname":"consignee",
+			"fieldname":"tear_weight",
 			"label": "TARE",
 			"fieldtype": "Data",
 			"width": 120,
@@ -183,12 +183,12 @@ def get_column():
 			"fieldtype": "Date",
 			"width": 120,
 		},
-		{
-			"fieldname":"ticts_delivery_date",
-			"label": "TICTS Delivery Date",
-			"fieldtype": "Date",
-			"width": 120,
-		},
+		# {
+		# 	"fieldname":"ticts_delivery_date",
+		# 	"label": "TICTS Delivery Date",
+		# 	"fieldtype": "Date",
+		# 	"width": 120,
+		# },
 		{
 			"fieldname":"vgm",
 			"label": "VGM",
@@ -249,189 +249,13 @@ def get_column():
 			"fieldtype": "Date",
 			"width": 120,
 		},
-		{
-			"fieldname":"file_status",
-			"label": "Status",
-			"fieldtype": "Data",
-			"width": 120,
-		},
 		# {
-		# 	"fieldname":"transporter",
-		# 	"label": "Transporter",
-		# 	"fieldtype": "Data",
-		# 	'width': 150
-		# },
-		# {
-		# 	"fieldname":"drivers_name",
-		# 	"label": "Driver ",
-		# 	"fieldtype": "Data",
-		# 	'width': 150
-		# },
-		# {
-		# 	"fieldname":"license_number",
-		# 	"label": "Driver's License",
-		# 	"fieldtype": "Data",
-		# 	'width': 150
-		# },
-		# {
-		# 	"fieldname":"truck",
-		# 	"label": "Truck",
-		# 	"fieldtype": "Data",
-		# 	'width': 150
-		# },
-		# {
-		# 	"fieldname":"trailer",
-		# 	"label": "Trailer",
-		# 	"fieldtype": "Data",
-		# 	'width': 150
-		# },
-		# {
-		# 	"fieldname":"loading_place",
-		# 	"label": "Loading Place",
+		# 	"fieldname":"file_status",
+		# 	"label": "Status",
 		# 	"fieldtype": "Data",
 		# 	"width": 120,
 		# },
-		# {
-		# 	"fieldname":"loading_date",
-		# 	"label": "Loading Date",
-		# 	"fieldtype": "Date",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"package",
-		# 	"label": "Package",
-		# 	"fieldtype": "float",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"amount_per_container",
-		# 	"label": "Amount per Conatiner",
-		# 	"fieldtype": "float",
-		# 	'width': 150
-		# },
-		# {
-		# 	"fieldname":"laoding_tons",
-		# 	"label": "Loading Tons",
-		# 	"fieldtype": "float",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"nakonde_arrival",
-		# 	"label": "Nakonde Arrival",
-		# 	"fieldtype": "Date",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"gate_pass_nakonde",
-		# 	"label": "Gate Pass Nakonde",
-		# 	"fieldtype": "Date",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"tunduma_arrival",
-		# 	"label": "Tunduma Arrival",
-		# 	"fieldtype": "Date",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"tunduma_departure_date",
-		# 	"label": "Tunduma Departure",
-		# 	"fieldtype": "Date",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"arrival_date",
-		# 	"label": "ICD Arrival",
-		# 	"fieldtype": "Date",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"gate_in_date",
-		# 	"label": "Get in Date",
-		# 	"fieldtype": "Date",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"carry_in_date",
-		# 	"label": "Carry in Date ",
-		# 	"fieldtype": "Date",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"start_offloading",
-		# 	"label": "Start offLoading Date",
-		# 	"fieldtype": "Date",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"end_offloading",
-		# 	"label": "End Offloading",
-		# 	"fieldtype": "Date",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"booking_number",
-		# 	"label": "Booking Number",
-		# 	"fieldtype": "Link",
-		# 	"options": 'Container Release',
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"shipping_line",
-		# 	"label": "Shipping Line",
-		# 	"fieldtype": "Data",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"container_number",
-		# 	"label": "Container",
-		# 	"fieldtype": "Link",
-		# 	"options": "Container",
-		# 	'width': 200
-		# },
-		# {
-		# 	"fieldname":"exporter",
-		# 	"label": "Exporter",
-		# 	"fieldtype": "Data",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"exporter",
-		# 	"label": "Exporter",
-		# 	"fieldtype": "Data",
-		# 	"width": 120,
-		# },
-		
-		# {
-		# 	"fieldname":"destination",
-		# 	"label": "Destination",
-		# 	"fieldtype": "Data",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"depot",
-		# 	"label": "Depot",
-		# 	"fieldtype": "Data",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"yard_departure",
-		# 	"label": "ICD Departure",
-		# 	"fieldtype": "Date",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"pcs",
-		# 	"label": "Pcs per Container",
-		# 	"fieldtype": "Data",
-		# 	"width": 120,
-		# },
-		# {
-		# 	"fieldname":"aficd_total",
-		# 	"label": "AFICD Total(Tons)",
-		# 	"fieldtype": "float",
-		# 	"width": 120,
-		# },
+
 	
 	]
 
@@ -452,7 +276,7 @@ def get_data(filters):
 		ta.after_balance, ta.scanner_report_confirmation_date, ta.scanner_check_person,
 		ta.custom_release_date,
 		ta.loading_permission, ta.ebs_received, ta.ticts_delivery_date, tcr.shipping_line,
-		tcr.cfs_arrival_date
+		tcr.cfs_arrival_date, ta.tear_weight
 
 		from `tabContainer Export` tce
 		LEFT JOIN 

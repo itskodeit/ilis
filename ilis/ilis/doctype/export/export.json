@@ -535,7 +535,7 @@
   {
    "fieldname": "tear_weight",
    "fieldtype": "Float",
-   "label": "Tear Weight"
+   "label": "Tare Weight"
   },
   {
    "fieldname": "gross_weight",
@@ -570,7 +570,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2022-03-17 08:43:19.894814",
+ "modified": "2022-03-17 11:34:55.292775",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Export",
