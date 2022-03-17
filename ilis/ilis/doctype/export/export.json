@@ -13,12 +13,14 @@
   "column_break_7",
   "exporter",
   "consignee",
+  "booking_number",
   "loading_section",
   "cargo",
   "package",
   "amount_per_container",
   "column_break_11",
   "laoding_tons",
+  "origin",
   "loading_place",
   "loading_date",
   "file_status",
@@ -46,51 +48,52 @@
   "arrival_date",
   "gate_in_date",
   "carry_in_date",
+  "crn",
   "column_break_29",
   "crn_received",
-  "start_offloading",
-  "end_offloading",
+  "offloading_date",
+  "offloading_weight",
   "stuffing_date",
+  "delivery_date",
   "storage_days",
   "weighing_section",
-  "aficd_total",
-  "with_container",
-  "vgm",
+  "before_balance",
+  "tear_weight",
   "column_break_48",
   "after_balance",
+  "gross_weight",
   "pcs",
-  "yard_departure",
   "section_break_27",
   "shipping_line",
   "vessel_name",
   "voyage_number",
-  "booking_number",
-  "booking_date",
   "column_break_41",
+  "loading_permission",
+  "shipping_instruction_date",
   "port_of_loading",
   "vessel_departure_date",
   "discharge_port",
   "destination",
   "port_section",
-  "port_charges_date",
   "container_delivery_to_port",
+  "port_charges_date",
+  "vgm",
+  "vgm_submission_date",
   "column_break_64",
+  "ebs_received",
   "scanner_report_confirmation",
   "scanner_report_confirmation_date",
   "scanner_check_person",
   "section_break_41",
   "depot",
-  "custom_release_date",
-  "loading_permission",
-  "ebs_received",
-  "ticts_delivery_date",
-  "payment_cut_off_date",
+  "assessment_date",
   "column_break_24",
-  "shipping_instruction_date",
-  "vgm_submission_date",
+  "custom_release_date",
+  "payment_cut_off_date",
   "section_break_47",
   "export_container",
   "loading_list",
+  "container_details",
   "amended_from"
  ],
  "fields": [
@@ -148,9 +151,9 @@
   },
   {
    "fieldname": "cargo",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Cargo",
-   "options": "Zinc\nLead\nManganese\nSilicon Manganese\nCopper\nLead\nAgricultural Materials"
+   "options": "Cargo"
   },
   {
    "fieldname": "package",
@@ -170,8 +173,9 @@
   },
   {
    "fieldname": "loading_place",
-   "fieldtype": "Data",
-   "label": "Loading Place"
+   "fieldtype": "Select",
+   "label": "Loading Place",
+   "options": "Lusaka\nChingola"
   },
   {
    "fieldname": "loading_date",
@@ -181,7 +185,7 @@
   {
    "fieldname": "file_status",
    "fieldtype": "Select",
-   "in_list_view": 1,
+   "hidden": 1,
    "label": "File Status",
    "options": "Arrived At the Border\nArrived at CFS\nFinished offloading\nStart Stuffing\nFinished Stuffing\nCFS Departure\nDelivered to Port\nVessel Departure\nOthers"
   },
@@ -272,40 +276,21 @@
    "label": "CRN Received Date"
   },
   {
-   "fieldname": "start_offloading",
-   "fieldtype": "Date",
-   "label": "Start Offloading"
-  },
-  {
-   "fieldname": "end_offloading",
-   "fieldtype": "Date",
-   "label": "End offloading"
-  },
-  {
    "fieldname": "section_break_27",
    "fieldtype": "Section Break",
-   "label": "Shipping Details"
-  },
-  {
-   "fieldname": "booking_number",
-   "fieldtype": "Link",
-   "label": "Booking Number",
-   "options": "Container Release"
-  },
-  {
-   "fieldname": "booking_date",
-   "fieldtype": "Date",
-   "label": "Booking Date"
+   "label": "Shipping Line Section"
   },
   {
    "fieldname": "exporter",
-   "fieldtype": "Data",
-   "label": "Exporter"
+   "fieldtype": "Link",
+   "label": "Exporter",
+   "options": "Customer"
   },
   {
    "fieldname": "consignee",
-   "fieldtype": "Data",
-   "label": "Consignee"
+   "fieldtype": "Link",
+   "label": "Consignee",
+   "options": "Customer"
   },
   {
    "fieldname": "destination",
@@ -316,6 +301,7 @@
   {
    "fieldname": "depot",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Depot",
    "options": "Depot"
   },
@@ -346,11 +332,6 @@
    "label": "EBS Received"
   },
   {
-   "fieldname": "ticts_delivery_date",
-   "fieldtype": "Date",
-   "label": "TICTS Delivery Date"
-  },
-  {
    "fieldname": "port_charges_date",
    "fieldtype": "Date",
    "label": "Port Charges Date"
@@ -363,6 +344,7 @@
   {
    "fieldname": "payment_cut_off_date",
    "fieldtype": "Date",
+   "hidden": 1,
    "label": "Payment Cut-off Date"
   },
   {
@@ -370,24 +352,10 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "yard_departure",
-   "fieldtype": "Date",
-   "label": "Yard departure"
-  },
-  {
    "fieldname": "pcs",
-   "fieldtype": "Data",
-   "label": "Pcs"
-  },
-  {
-   "fieldname": "aficd_total",
-   "fieldtype": "Float",
-   "label": "AFICD Total"
-  },
-  {
-   "fieldname": "with_container",
-   "fieldtype": "Float",
-   "label": "With Container"
+   "fieldtype": "Select",
+   "label": "Pcs",
+   "options": "Bags\nPieces\nLoose"
   },
   {
    "fieldname": "vgm",
@@ -456,7 +424,8 @@
   },
   {
    "fieldname": "section_break_41",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Declaration Section"
   },
   {
    "fieldname": "column_break_41",
@@ -489,7 +458,7 @@
   {
    "fieldname": "weighing_section",
    "fieldtype": "Section Break",
-   "label": "Weighing"
+   "label": "Weight Stuffed Container Section"
   },
   {
    "fieldname": "column_break_48",
@@ -498,7 +467,7 @@
   {
    "fieldname": "port_section",
    "fieldtype": "Section Break",
-   "label": "Port"
+   "label": "Port Section"
   },
   {
    "fieldname": "column_break_64",
@@ -537,11 +506,71 @@
    "fieldtype": "Link",
    "label": "Port of Discharge ",
    "options": "Port"
+  },
+  {
+   "fieldname": "crn",
+   "fieldtype": "Data",
+   "label": "CRN"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery Date"
+  },
+  {
+   "fieldname": "offloading_date",
+   "fieldtype": "Date",
+   "label": "Offloading Date"
+  },
+  {
+   "fieldname": "offloading_weight",
+   "fieldtype": "Float",
+   "label": "Offloading Weight"
+  },
+  {
+   "fieldname": "before_balance",
+   "fieldtype": "Float",
+   "label": "Before Balance"
+  },
+  {
+   "fieldname": "tear_weight",
+   "fieldtype": "Float",
+   "label": "Tear Weight"
+  },
+  {
+   "fieldname": "gross_weight",
+   "fieldtype": "Float",
+   "label": "Gross Weight"
+  },
+  {
+   "fieldname": "assessment_date",
+   "fieldtype": "Date",
+   "label": "Assessment Date"
+  },
+  {
+   "default": "Zambia",
+   "fieldname": "origin",
+   "fieldtype": "Link",
+   "label": "Origin",
+   "options": "Country"
+  },
+  {
+   "fieldname": "booking_number",
+   "fieldtype": "Data",
+   "label": "Booking Number"
+  },
+  {
+   "fieldname": "container_details",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Container Details",
+   "options": "Container",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2022-03-14 07:50:09.654913",
+ "modified": "2022-03-17 08:43:19.894814",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Export",

@@ -1,22 +1,22 @@
 {
  "category": "Modules",
  "charts": [],
- "creation": "2022-03-11 08:33:27.687885",
+ "creation": "2022-03-14 11:26:35.378796",
  "developer_mode_only": 0,
  "disable_user_customization": 0,
  "docstatus": 0,
  "doctype": "Workspace",
- "extends_another_page": 1,
+ "extends_another_page": 0,
  "hide_custom": 0,
  "idx": 0,
- "is_default": 1,
+ "is_default": 0,
  "is_standard": 1,
  "label": "Abble Export",
  "links": [
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Export & Import",
+   "label": "Files",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -24,7 +24,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Export List",
+   "label": "Export",
    "link_to": "Export",
    "link_type": "DocType",
    "onboard": 0,
@@ -51,16 +51,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Container List",
-   "link_to": "Container",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Data Setup",
+   "label": "Reports",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -68,17 +59,43 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "CFS/ICD",
-   "link_to": "CFS",
-   "link_type": "DocType",
+   "label": "Export Summary Report",
+   "link_to": "Export Summary Report",
+   "link_type": "Report",
    "onboard": 0,
    "type": "Link"
   },
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Shipping Line",
-   "link_to": "Shipping Line",
+   "label": "Export Sample Report",
+   "link_to": "Export Sample Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Container Lifecycle Report",
+   "link_to": "Container Lifecycle Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Setup",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Port",
+   "link_to": "Port",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -95,62 +112,28 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Port",
-   "link_to": "Port",
+   "label": "CFS",
+   "link_to": "CFS",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shipping Line",
+   "link_to": "Shipping Line",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2022-03-11 12:51:46.249253",
+ "modified": "2022-03-17 08:29:34.763862",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Abble Export",
  "owner": "Administrator",
  "pin_to_bottom": 0,
- "pin_to_top": 1,
- "shortcuts": [
-  {
-   "doc_view": "List",
-   "label": "Export List",
-   "link_to": "Export",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Container Release",
-   "link_to": "Container Release",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Container",
-   "link_to": "Container",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Client List",
-   "link_to": "Customer",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "",
-   "label": "Export Summary Report",
-   "link_to": "Export Summary Report",
-   "type": "Report"
-  },
-  {
-   "doc_view": "",
-   "label": "Container Lifecycle Report",
-   "link_to": "Container Lifecycle Report",
-   "type": "Report"
-  },
-  {
-   "doc_view": "",
-   "label": "Export Sample Report",
-   "link_to": "Export Sample Report",
-   "type": "Report"
-  }
- ]
+ "pin_to_top": 0,
+ "shortcuts": []
 }

@@ -1,31 +1,39 @@
 {
  "actions": [],
- "allow_import": 1,
  "autoname": "field:container_number",
  "creation": "2022-01-26 15:35:20.745352",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "reference_container_release",
+  "creation_document_no",
+  "release_date",
+  "export_reference",
+  "shipping_line",
+  "booking_number",
+  "section_break_5",
   "container_number",
   "size",
-  "release_date",
+  "type",
+  "seal",
   "weight",
-  "status",
-  "seal"
+  "status"
  ],
  "fields": [
   {
    "fieldname": "container_number",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Container Number",
    "unique": 1
   },
   {
    "fieldname": "size",
    "fieldtype": "Select",
-   "label": "Size",
+   "in_list_view": 1,
+   "label": "Container Size",
    "options": "40ft\n20ft\n40-HC\n40-Open Top\n45-GP\nloose cargo"
   },
   {
@@ -37,43 +45,68 @@
   {
    "fieldname": "weight",
    "fieldtype": "Data",
-   "label": "Weight"
+   "in_list_view": 1,
+   "label": "Gross Weight"
   },
   {
    "default": "Available",
    "fieldname": "status",
    "fieldtype": "Select",
-   "in_list_view": 1,
+   "hidden": 1,
    "label": "Status",
    "options": "Available\nNot-Available"
   },
   {
    "fieldname": "seal",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Seal"
+  },
+  {
+   "fieldname": "reference_container_release",
+   "fieldtype": "Link",
+   "label": "Reference Container Release",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "export_reference",
+   "fieldtype": "Data",
+   "label": "Export Reference"
+  },
+  {
+   "fieldname": "shipping_line",
+   "fieldtype": "Link",
+   "label": "Shipping Line",
+   "options": "Shipping Line"
+  },
+  {
+   "fieldname": "booking_number",
+   "fieldtype": "Data",
+   "label": "Booking Number"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "creation_document_no",
+   "fieldtype": "Dynamic Link",
+   "label": "Creation Document No",
+   "options": "reference_container_release"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Container Type"
   }
  ],
  "links": [],
- "modified": "2022-03-13 11:01:15.510222",
+ "modified": "2022-03-17 09:01:06.830764",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
- "quick_entry": 1,
+ "permissions": [],
  "sort_field": "modified",
  "sort_order": "DESC",
  "track_changes": 1

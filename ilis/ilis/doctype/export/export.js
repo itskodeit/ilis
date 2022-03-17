@@ -7,11 +7,11 @@ frappe.ui.form.on('Export', {
             show_container_dialog(frm);
         })*/
 
-        frm.fields_dict["export_container"].grid.add_custom_button(__('Get Containers'), 
+        /*frm.fields_dict["export_container"].grid.add_custom_button(__('Get Containers'), 
 			function() {
 				//frappe.msgprint(__("GetCo"));
 				show_container_dialog(frm);
-        });
+        });*/
         //frm.fields_dict["export_container"].grid.grid_buttons.find('.btn-custom').removeClass('btn-default').addClass('btn-primary');
 
 
@@ -32,7 +32,7 @@ frappe.ui.form.on('Export', {
 			return {
 				filters: [
 					['Container','status','=', 'Available'],
-					//['Container Release','booking_number','=', doc.booking_number],
+					['Container','export_reference','=', doc.name],
 				]
 			}
 		});
@@ -107,10 +107,10 @@ function get_container_from_release(booking_number) {
     "callback": function(response) {
          // add items to your child table
          var sinv = response.message;
-         sinv.containers_released.forEach(function (item) {
+         sinv.container_collected.forEach(function (item) {
              var child = cur_frm.add_child('export_container');
              frappe.model.set_value(child.doctype, child.name, 'container_number', item.container_number);
-             frappe.model.set_value(child.doctype, child.name, 'release_date', item.release_date);
+             //frappe.model.set_value(child.doctype, child.name, 'release_date', item.release_date);
          });
          cur_frm.refresh_field('export_container');
      }
@@ -124,14 +124,6 @@ frappe.ui.form.on("Export", "validate", function(frm) {
 	}
 	if (frm.doc.gate_in_date < frm.doc.arrival_date) {
 		frappe.msgprint(__("Arrival date cannot be later than Gate in Date"));
-		frappe.validated = false;
-	}
-	if (frm.doc.end_offloading < frm.doc.start_offloading) {
-		frappe.msgprint(__("Start offloading date cannot be later than End offloading Date"));
-		frappe.validated = false;
-	}
-	if (frm.doc.end_offloading < frm.doc.start_offloading) {
-		frappe.msgprint(__("Start offloading date cannot be later than End offloading Date"));
 		frappe.validated = false;
 	}
 	

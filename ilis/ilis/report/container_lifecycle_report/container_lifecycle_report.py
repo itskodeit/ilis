@@ -128,7 +128,7 @@ def get_data(filters):
 		tr.demmurage_count, tr.cfs_arrival_date, tr.name, tr.shipping_line, tr.free_days,
 		tr.free_days_stuffed, tr.stuffing_date, tr.free_days_empty
 
-		from `tabContainer Export` tce
+		from `tabContainer Collected` tce
 		LEFT JOIN
 			`tabContainer Release` tr ON tce.parent = tr.name
 		where tr.release_date BETWEEN %(from_date)s AND %(to_date)s

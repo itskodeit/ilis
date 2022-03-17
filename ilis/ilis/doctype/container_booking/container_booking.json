@@ -9,16 +9,20 @@
  "field_order": [
   "naming_series",
   "booking_no",
+  "shipping_line",
+  "depot",
+  "column_break_5",
   "requested_by",
   "employee_name",
   "no_of_containers",
-  "depot",
-  "column_break_5",
+  "section_break_9",
   "approver",
   "approver_name",
   "approval_status",
+  "column_break_14",
   "date_of_approval",
   "collected_by",
+  "collector_name",
   "amended_from"
  ],
  "fields": [
@@ -59,8 +63,9 @@
   },
   {
    "fieldname": "collected_by",
-   "fieldtype": "Data",
-   "label": "Collected By"
+   "fieldtype": "Link",
+   "label": "Collected By",
+   "options": "Employee"
   },
   {
    "fieldname": "naming_series",
@@ -104,12 +109,33 @@
    "fieldtype": "Data",
    "label": "Employee Name",
    "read_only": 1
+  },
+  {
+   "fetch_from": "collected_by.employee_name",
+   "fieldname": "collector_name",
+   "fieldtype": "Data",
+   "label": "Collector Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_line",
+   "fieldtype": "Link",
+   "label": "Shipping Line",
+   "options": "Shipping Line"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-03-14 07:48:32.809104",
+ "modified": "2022-03-16 10:47:58.671903",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container Booking",

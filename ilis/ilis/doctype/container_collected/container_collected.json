@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "creation": "2022-03-16 09:37:11.185536",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "container_number",
+  "size",
+  "column_break_2",
+  "container_type",
+  "seal",
+  "section_break_5",
+  "stuffing_date",
+  "free_days_stuffed",
+  "stuffed_counter"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fetch_from": "export_reference.stuffing_date",
+   "fieldname": "stuffing_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Stuffing Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "free_days_stuffed",
+   "fieldtype": "Data",
+   "label": "Full Free Days"
+  },
+  {
+   "fieldname": "stuffed_counter",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Stuffed Counter",
+   "read_only": 1
+  },
+  {
+   "fieldname": "container_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Container Number"
+  },
+  {
+   "fetch_from": "container_number.size",
+   "fieldname": "size",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Size",
+   "options": "40ft\n20ft\n40-HC\n40-Open Top\n45-GP\nloose cargo"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "container_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Container Type"
+  },
+  {
+   "fieldname": "seal",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Seal"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2022-03-16 15:37:39.214521",
+ "modified_by": "Administrator",
+ "module": "Ilis",
+ "name": "Container Collected",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

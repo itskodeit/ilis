@@ -1,16 +1,17 @@
 {
  "actions": [],
- "autoname": "field:booking_number",
+ "autoname": "naming_series:",
  "creation": "2022-02-11 14:40:21.949740",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "naming_series",
   "booking_number",
-  "shipping_line",
   "export_reference",
   "booking_reference",
   "column_break_4",
+  "shipping_line",
   "vessel_name",
   "departure_date",
   "container_pickup_section",
@@ -30,14 +31,14 @@
   "free_days_stuffed",
   "stuffed_counter",
   "section_break_7",
-  "containers_released"
+  "container_collected",
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "booking_number",
    "fieldtype": "Data",
-   "label": "Booking Number",
-   "unique": 1
+   "label": "Booking Number"
   },
   {
    "fieldname": "vessel_name",
@@ -68,13 +69,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "containers_released",
-   "fieldtype": "Table",
-   "label": "Containers Released",
-   "options": "Container Export",
-   "reqd": 1
-  },
-  {
    "fieldname": "cfs",
    "fieldtype": "Select",
    "label": "CFS",
@@ -101,10 +95,10 @@
   },
   {
    "fieldname": "shipping_line",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Shipping line",
-   "options": "Maersk Line\nPIL\nCosco\nHapag\nMSC\nEvergreen\nCMA\nOthers"
+   "options": "Shipping Line"
   },
   {
    "depends_on": "eval:doc.release_date != null",
@@ -118,8 +112,7 @@
    "fieldname": "export_reference",
    "fieldtype": "Link",
    "label": "Export Reference",
-   "options": "Abble",
-   "read_only": 1
+   "options": "Export"
   },
   {
    "fetch_from": "export_reference.stuffing_date",
@@ -137,12 +130,12 @@
   {
    "fieldname": "free_days_empty",
    "fieldtype": "Data",
-   "label": "Free Days Empty"
+   "label": "Empty Free Days"
   },
   {
    "fieldname": "free_days_stuffed",
    "fieldtype": "Data",
-   "label": "Free Days Stuffed"
+   "label": "Full Free Days"
   },
   {
    "fieldname": "cfs_section_section",
@@ -173,11 +166,38 @@
    "fieldname": "booking_reference",
    "fieldtype": "Link",
    "label": "Container Booking",
-   "options": "Container Booking"
+   "options": "Container Booking",
+   "read_only": 1
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "container_collected",
+   "fieldtype": "Table",
+   "label": "Container Collected",
+   "options": "Container Collected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Container Release",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "CR-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CR-",
+   "reqd": 1
   }
  ],
+ "is_submittable": 1,
  "links": [],
- "modified": "2022-03-11 17:21:30.602139",
+ "modified": "2022-03-17 07:44:22.236042",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container Release",
