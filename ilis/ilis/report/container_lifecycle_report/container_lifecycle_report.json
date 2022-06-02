@@ -10,7 +10,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "json": "{}",
- "modified": "2022-03-01 12:43:36.024417",
+ "modified": "2022-06-02 08:42:38.289209",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container Lifecycle Report",
@@ -21,7 +21,7 @@
  "report_type": "Script Report",
  "roles": [
   {
-   "role": "System Manager"
+   "role": "Export User"
   }
  ]
 }

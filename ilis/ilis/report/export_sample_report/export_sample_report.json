@@ -9,7 +9,7 @@
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2022-03-01 08:59:49.276252",
+ "modified": "2022-06-02 08:42:11.513450",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Export Sample Report",
@@ -20,7 +20,7 @@
  "report_type": "Script Report",
  "roles": [
   {
-   "role": "System Manager"
+   "role": "Export User"
   }
  ]
 }

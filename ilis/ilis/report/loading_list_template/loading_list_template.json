@@ -10,7 +10,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "json": "{}",
- "modified": "2022-03-17 09:49:46.651391",
+ "modified": "2022-06-02 08:42:56.157879",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Loading List Template",
@@ -21,7 +21,7 @@
  "report_type": "Script Report",
  "roles": [
   {
-   "role": "System Manager"
+   "role": "Export User"
   }
  ]
 }
