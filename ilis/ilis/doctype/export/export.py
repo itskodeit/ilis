@@ -9,15 +9,15 @@ class Export(Document):
 	def before_save(self):
 		self.validate_bl()
 		
-		for item in self.export_container:
-			doc = frappe.get_doc("Container", item.container_number)
-			doc.update({"status": "Not-Available"}, )
-			doc.save()
+		# for item in self.export_container:
+		# 	doc = frappe.get_doc("Container", item.container_number)
+		# 	doc.update({"status": "Not-Available"}, )
+		# 	doc.save()
 
-		for item in self.containers_on_truck:
-			doc = frappe.get_doc("Container", item.container_number)
-			doc.update({"status": "Not-Available"}, )
-			doc.save()
+		# for item in self.containers_on_truck:
+		# 	doc = frappe.get_doc("Container", item.container_number)
+		# 	doc.update({"status": "Not-Available"}, )
+		# 	doc.save()
 		# if self.booking_number:
 		# 	doc = frappe.get_doc("Container Release", self.booking_number)
 		# 	doc.export_reference = self.name
@@ -43,7 +43,8 @@ class Export(Document):
 
 	def validate_bl_format(self):
 		alphabet = '0123456789A BCDEFGHIJK LMNOPQRSTU VWXYZ'
-		for s in self.bl_number:
-			if s not in alphabet:
-				return False
+		if self.bl_number:
+			for s in self.bl_number:
+				if s not in alphabet:
+					return False
 		return True
