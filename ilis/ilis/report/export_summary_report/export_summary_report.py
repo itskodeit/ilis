@@ -278,9 +278,9 @@ def get_data(filters):
 		ta.loading_permission, ta.ebs_received, ta.ticts_delivery_date, tcr.shipping_line,
 		tcr.cfs_arrival_date, ta.tear_weight
 
-		from `tabContainer Export` tce
+		from `tabExport` ta
 		LEFT JOIN 
-			`tabExport` ta ON tce.parent = ta.name
+			`tabContainer Export` tce ON ta.name = tce.parent
 		LEFT JOIN 
 			`tabContainer Release` tcr ON ta.booking_number = tcr.name
 		where ta.loading_date BETWEEN %(from_date)s AND %(to_date)s

@@ -42,8 +42,8 @@ def execute(filters=None):
 		row['arrival_date'] = d.arrival_date
 		row['gate_in_date'] = d.gate_in_date
 		row['carry_in_date'] = d.carry_in_date
-		row['start_offloading'] = d.start_offloading
-		row['end_offloading'] = d.end_offloading
+		row['offloading_date'] = d.offloading_date
+		
 
 		row['booking_number'] = d.booking_number
 		row['shipping_line'] = d.shipping_line
@@ -194,17 +194,17 @@ def get_column():
 			"width": 120,
 		},
 		{
-			"fieldname":"start_offloading",
-			"label": "Start offLoading Date",
+			"fieldname":"offloading_date",
+			"label": "offLoading Date",
 			"fieldtype": "Date",
 			"width": 120,
 		},
-		{
-			"fieldname":"end_offloading",
-			"label": "End Offloading",
-			"fieldtype": "Date",
-			"width": 120,
-		},
+		# {
+		# 	"fieldname":"end_offloading",
+		# 	"label": "End Offloading",
+		# 	"fieldtype": "Date",
+		# 	"width": 120,
+		# },
 		{
 			"fieldname":"booking_number",
 			"label": "Booking Number",
@@ -285,15 +285,15 @@ def get_data(filters):
 		ta.drivers_name, ta.license_number, ta.truck, ta.trailer, ta.loading_place,
 		ta.loading_date, ta.cargo, ta.package, ta.amount_per_container, ta.laoding_tons,
 		ta.nakonde_arrival, ta.gate_pass_nakonde, ta.tunduma_arrival, ta.tunduma_departure_date,
-		ta.cfs, ta.arrival_date, ta.gate_in_date, ta.carry_in_date, ta.start_offloading,
-		ta.end_offloading, ta.booking_number, ta.exporter, ta.consignee, ta.destination,
+		ta.cfs, ta.arrival_date, ta.gate_in_date, ta.carry_in_date, ta.offloading_date,
+		ta.booking_number, ta.exporter, ta.consignee, ta.destination,
 		ta.depot, ta.yard_departure,
 		ta.pcs, ta.aficd_total, ta.with_container, ta.vgm,
 		ta.after_balance, tcr.shipping_line
 
-		from `tabContainer Export` tce
+		from `tabExport` ta
 		LEFT JOIN 
-			`tabExport` ta ON tce.parent = ta.name
+			`tabContainer Export` tce ON  ta.name =  tce.parent
 		LEFT JOIN 
 			`tabContainer Release` tcr ON ta.booking_number = tcr.name
 		where ta.loading_date BETWEEN %(from_date)s AND %(to_date)s
