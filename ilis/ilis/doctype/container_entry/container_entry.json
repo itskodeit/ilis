@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2022-06-10 04:30:13.700922",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "booking_number",
+  "export_reference",
+  "column_break_4",
+  "purpose",
+  "section_break_7",
+  "container_collected",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "CE-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Naming Series",
+   "options": "CE-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "booking_number",
+   "fieldtype": "Data",
+   "label": "Booking Number"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "export_reference",
+   "fieldtype": "Link",
+   "label": "Export Reference",
+   "options": "Export"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "container_collected",
+   "fieldtype": "Table",
+   "label": "Containers from Border",
+   "options": "Container Collected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Container Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Container Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Select",
+   "label": "Purpose",
+   "options": "Container Entry"
+  }
+ ],
+ "in_create": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-06-10 06:25:29.501114",
+ "modified_by": "Administrator",
+ "module": "Ilis",
+ "name": "Container Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

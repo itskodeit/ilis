@@ -1,0 +1,443 @@
+{
+ "actions": [],
+ "autoname": "CAT.#####",
+ "creation": "2022-06-08 05:42:24.217791",
+ "description": "fs",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bl_number",
+  "export_reference",
+  "booking_number",
+  "column_break_7",
+  "exporter",
+  "consignee",
+  "client",
+  "reference_number",
+  "loading_section",
+  "cargo",
+  "package",
+  "amount_per_container",
+  "laoding_tons",
+  "column_break_11",
+  "origin",
+  "loading_place",
+  "loading_date",
+  "tracking_status",
+  "truck_container_section_section",
+  "containers_on_truck",
+  "transporter_section_section",
+  "transporter",
+  "truck",
+  "trailer",
+  "column_break_18",
+  "container_on_truck",
+  "drivers_name",
+  "drivers_phone",
+  "license_number",
+  "border_section_section",
+  "borders",
+  "nakonde_arrival",
+  "gate_pass_nakonde",
+  "column_break_14",
+  "tunduma_arrival",
+  "tunduma_departure_date",
+  "container_station_section",
+  "cfs_arrival_section",
+  "cfs",
+  "arrival_date",
+  "gate_in_date",
+  "carry_in_date",
+  "crn",
+  "column_break_29",
+  "crn_received",
+  "offloading_date",
+  "offloading_weight",
+  "stuffing_date",
+  "delivery_date",
+  "storage_days",
+  "weighing_section",
+  "before_balance",
+  "tear_weight",
+  "column_break_48",
+  "after_balance",
+  "gross_weight",
+  "pcs",
+  "section_break_47",
+  "export_container",
+  "loading_list",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "bl_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "BL Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "exporter",
+   "fieldtype": "Link",
+   "label": "Exporter",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "reference_number",
+   "fieldtype": "Data",
+   "label": "Client Reference Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "booking_number",
+   "fieldtype": "Data",
+   "label": "Booking Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "label": "Consignee",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "loading_section",
+   "fieldtype": "Section Break",
+   "label": "Loading Section"
+  },
+  {
+   "fieldname": "cargo",
+   "fieldtype": "Link",
+   "label": "Cargo",
+   "options": "Cargo"
+  },
+  {
+   "fieldname": "package",
+   "fieldtype": "Select",
+   "label": "Package",
+   "options": "Bags\nPieces\nLoose"
+  },
+  {
+   "fieldname": "amount_per_container",
+   "fieldtype": "Data",
+   "label": "Number of Packages"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "laoding_tons",
+   "fieldtype": "Data",
+   "label": "Loading Tons"
+  },
+  {
+   "default": "Zambia",
+   "fieldname": "origin",
+   "fieldtype": "Link",
+   "label": "Origin",
+   "options": "Country"
+  },
+  {
+   "fieldname": "loading_place",
+   "fieldtype": "Link",
+   "label": "Loading Place",
+   "options": "Loading Place"
+  },
+  {
+   "fieldname": "loading_date",
+   "fieldtype": "Date",
+   "label": "Loading Date"
+  },
+  {
+   "fieldname": "truck_container_section_section",
+   "fieldtype": "Section Break",
+   "label": "Truck Container Section"
+  },
+  {
+   "fieldname": "containers_on_truck",
+   "fieldtype": "Table",
+   "label": "Containers On Truck",
+   "options": "Container Details"
+  },
+  {
+   "fieldname": "transporter_section_section",
+   "fieldtype": "Section Break",
+   "label": "Transporter Section"
+  },
+  {
+   "fieldname": "transporter",
+   "fieldtype": "Link",
+   "label": "Transporter",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "truck",
+   "fieldtype": "Data",
+   "label": "Truck"
+  },
+  {
+   "fieldname": "trailer",
+   "fieldtype": "Data",
+   "label": "Trailer"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.package != 'Loose'",
+   "fieldname": "container_on_truck",
+   "fieldtype": "Link",
+   "label": "Container on Truck",
+   "options": "Container"
+  },
+  {
+   "fieldname": "drivers_name",
+   "fieldtype": "Data",
+   "label": "Driver's Name"
+  },
+  {
+   "fieldname": "drivers_phone",
+   "fieldtype": "Data",
+   "label": "Driver's phone"
+  },
+  {
+   "fieldname": "license_number",
+   "fieldtype": "Data",
+   "label": "License Number"
+  },
+  {
+   "fieldname": "border_section_section",
+   "fieldtype": "Section Break",
+   "label": "Border Section"
+  },
+  {
+   "fieldname": "borders",
+   "fieldtype": "Select",
+   "label": "Borders",
+   "options": "Tunduma\nKasulumu\nKasumbalesa\nOthers"
+  },
+  {
+   "fieldname": "nakonde_arrival",
+   "fieldtype": "Date",
+   "label": "Nakonde Arrival"
+  },
+  {
+   "fieldname": "gate_pass_nakonde",
+   "fieldtype": "Date",
+   "label": "Gate Pass Nakonde"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tunduma_arrival",
+   "fieldtype": "Date",
+   "label": "Tunduma Arrival"
+  },
+  {
+   "fieldname": "tunduma_departure_date",
+   "fieldtype": "Date",
+   "label": "Tunduma Departure Date"
+  },
+  {
+   "fieldname": "container_station_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cfs_arrival_section",
+   "fieldtype": "Section Break",
+   "label": "CFS Section"
+  },
+  {
+   "fieldname": "cfs",
+   "fieldtype": "Link",
+   "label": "CFS",
+   "options": "CFS"
+  },
+  {
+   "fieldname": "arrival_date",
+   "fieldtype": "Date",
+   "label": "Arrival Date"
+  },
+  {
+   "fieldname": "gate_in_date",
+   "fieldtype": "Date",
+   "label": "Gate in Date"
+  },
+  {
+   "fieldname": "carry_in_date",
+   "fieldtype": "Date",
+   "label": "Carry in Date"
+  },
+  {
+   "fieldname": "crn",
+   "fieldtype": "Data",
+   "label": "CRN"
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "crn_received",
+   "fieldtype": "Date",
+   "label": "CRN Received Date"
+  },
+  {
+   "fieldname": "offloading_date",
+   "fieldtype": "Date",
+   "label": "Offloading Date"
+  },
+  {
+   "fieldname": "offloading_weight",
+   "fieldtype": "Float",
+   "label": "Offloading Weight"
+  },
+  {
+   "fieldname": "stuffing_date",
+   "fieldtype": "Date",
+   "label": "Stuffing Date"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery Date"
+  },
+  {
+   "fieldname": "storage_days",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Remaining Days (Stuffed)"
+  },
+  {
+   "fieldname": "weighing_section",
+   "fieldtype": "Section Break",
+   "label": "Weight Stuffed Container Section"
+  },
+  {
+   "fieldname": "before_balance",
+   "fieldtype": "Float",
+   "label": "Before Balance"
+  },
+  {
+   "fieldname": "tear_weight",
+   "fieldtype": "Float",
+   "label": "Tare Weight"
+  },
+  {
+   "fieldname": "column_break_48",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "after_balance",
+   "fieldtype": "Float",
+   "label": "After Balance"
+  },
+  {
+   "fieldname": "gross_weight",
+   "fieldtype": "Float",
+   "label": "Gross Weight"
+  },
+  {
+   "fieldname": "pcs",
+   "fieldtype": "Select",
+   "label": "Pcs",
+   "options": "Bags\nPieces\nLoose"
+  },
+  {
+   "fieldname": "section_break_47",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "export_container",
+   "fieldtype": "Table",
+   "label": "Export Container",
+   "options": "Container Export"
+  },
+  {
+   "fieldname": "loading_list",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Loading List",
+   "options": "Loading List"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Cargo Tracking",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "export_reference",
+   "fieldtype": "Link",
+   "label": "Export Reference",
+   "options": "Export",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tracking_status",
+   "fieldtype": "Select",
+   "label": "Tracking Status",
+   "options": "\nArrived At the Border\nArrived at CFS\nFinished offloading\nStart Stuffing\nFinished Stuffing\nCFS Departure\nDelivered to Port\nVessel Departure\nOthers"
+  }
+ ],
+ "in_create": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-06-10 06:23:37.038378",
+ "modified_by": "Administrator",
+ "module": "Ilis",
+ "name": "Cargo Tracking",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Export User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -28,13 +28,13 @@
   "containers_on_truck",
   "transporter_section_section",
   "transporter",
+  "truck",
+  "trailer",
+  "column_break_18",
+  "container_on_truck",
   "drivers_name",
   "drivers_phone",
   "license_number",
-  "column_break_18",
-  "container_on_truck",
-  "truck",
-  "trailer",
   "border_section_section",
   "borders",
   "nakonde_arrival",
@@ -199,11 +199,12 @@
    "fieldname": "containers_on_truck",
    "fieldtype": "Table",
    "label": "Containers On Truck",
-   "options": "Container Collected"
+   "options": "Container Details"
   },
   {
    "fieldname": "border_section_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Border Section"
   },
   {
@@ -243,6 +244,7 @@
   {
    "fieldname": "cfs_arrival_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "CFS Section"
   },
   {
@@ -440,6 +442,7 @@
   {
    "fieldname": "transporter_section_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Transporter Section"
   },
   {
@@ -449,6 +452,7 @@
   {
    "fieldname": "loading_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Loading Section"
   },
   {
@@ -458,6 +462,7 @@
   {
    "fieldname": "weighing_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Weight Stuffed Container Section"
   },
   {
@@ -477,6 +482,7 @@
    "depends_on": "eval:doc.package != 'Loose'",
    "fieldname": "container_on_truck",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Container on Truck",
    "options": "Container"
   },
@@ -570,7 +576,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2022-03-26 10:06:06.389345",
+ "modified": "2022-06-10 04:43:15.666732",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Export",

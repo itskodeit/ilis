@@ -18,7 +18,8 @@
   "type",
   "seal",
   "weight",
-  "status"
+  "status",
+  "purpose"
  ],
  "fields": [
   {
@@ -98,10 +99,15 @@
    "fieldname": "type",
    "fieldtype": "Data",
    "label": "Container Type"
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Data",
+   "label": "Purpose"
   }
  ],
  "links": [],
- "modified": "2022-03-26 10:11:19.652823",
+ "modified": "2022-06-10 04:54:18.548715",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container",

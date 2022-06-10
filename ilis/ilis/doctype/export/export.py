@@ -3,6 +3,7 @@
 
 import frappe
 from frappe import _
+from frappe.model.mapper import get_mapped_doc
 from frappe.model.document import Document
 
 class Export(Document):
@@ -48,3 +49,49 @@ class Export(Document):
 				if s not in alphabet:
 					return False
 		return True
+
+
+@frappe.whitelist()
+def make_cargo_tracking(source_name, target_doc=None, ignore_permissions=False):
+
+	doclist = get_mapped_doc("Export", source_name, {
+			"Export": {
+				"doctype": "Cargo Tracking",
+				"field_map": {
+					"name": "export_reference",
+					"booking_no": "booking_number",
+					"bl_number": "bl_number",
+					"exporter": "exporter",
+					"reference_number": "reference_number",
+					"consignee": "consignee",
+				},
+				"validation": {
+					"docstatus": ["=", 0]
+				},
+				
+			},
+		}, target_doc, ignore_permissions=ignore_permissions)
+
+
+	return doclist
+
+
+@frappe.whitelist()
+def make_container_entry(source_name, target_doc=None, ignore_permissions=False):
+
+	doclist = get_mapped_doc("Export", source_name, {
+			"Export": {
+				"doctype": "Container Entry",
+				"field_map": {
+					"name": "export_reference",
+					"booking_no": "booking_number",
+				},
+				"validation": {
+					"docstatus": ["=", 0]
+				},
+				
+			},
+		}, target_doc, ignore_permissions=ignore_permissions)
+
+
+	return doclist

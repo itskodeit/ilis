@@ -3,6 +3,20 @@
 
 frappe.ui.form.on('Export', {
 	refresh: function(frm) {
+		cur_frm.add_custom_button(__('Cargo Tracking'), function(){
+				frappe.model.open_mapped_doc({
+					method: "ilis.ilis.doctype.export.export.make_cargo_tracking",
+					frm: cur_frm
+				})
+		}, __('Create'));
+		cur_frm.add_custom_button(__('Container Entry'), function(){
+				frappe.model.open_mapped_doc({
+					method: "ilis.ilis.doctype.export.export.make_container_entry",
+					frm: cur_frm
+				})
+		}, __('Create'));
+			
+			
 		/*frm.add_custom_button(__("Get Containers"), function() {
             show_container_dialog(frm);
         })*/
@@ -31,7 +45,7 @@ frappe.ui.form.on('Export', {
 			let row = locals[cdt] [cdn]
 			return {
 				filters: [
-					['Container','status','=', 'Available'],
+					['Container','purpose','!=', 'Container Entry'],
 					['Container','export_reference','=', doc.name],
 				]
 			}

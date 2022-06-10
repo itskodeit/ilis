@@ -264,7 +264,7 @@ def get_data(filters):
 	where_filter = {"from_date": filters.from_date, "to_date": filters.to_date}
 	where = ""
 
-	data = frappe.db.sql("""select tce.container_number,tce.release_date, 
+	data = frappe.db.sql("""select tce.container_number, 
 		ta.bl_number, ta.client, ta.reference_number, ta.transporter, ta.file_status,
 		ta.drivers_name, ta.license_number, ta.truck, ta.trailer, ta.loading_place,
 		ta.loading_date, ta.cargo, ta.package, ta.amount_per_container, ta.laoding_tons,
