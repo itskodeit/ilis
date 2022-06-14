@@ -64,6 +64,9 @@ def make_cargo_tracking(source_name, target_doc=None, ignore_permissions=False):
 					"exporter": "exporter",
 					"reference_number": "reference_number",
 					"consignee": "consignee",
+					"shipping_line": "shipping_line",
+					"vessel_name": "vessel_name",
+					"discharge_port": "discharge_port",
 				},
 				"validation": {
 					"docstatus": ["=", 0]

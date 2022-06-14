@@ -36,6 +36,24 @@ frappe.ui.form.on('Cargo Tracking', {
 		});
 	},
 
+	vessel_name: function(frm) {
+		$.each(frm.doc.export_container || [], function(i, d) {
+			if(!d.vessel) d.vessel = frm.doc.vessel_name;
+		});
+		refresh_field("export_container");
+	},
+	shipping_line: function(frm) {
+		$.each(frm.doc.export_container || [], function(i, d) {
+			if(!d.shipping_line) d.shipping_line = frm.doc.shipping_line;
+		});
+		refresh_field("export_container");
+	},
+	discharge_port: function(frm) {
+		$.each(frm.doc.export_container || [], function(i, d) {
+			if(!d.pod) d.pod = frm.doc.discharge_port;
+		});
+		refresh_field("export_container");
+	},
 
 });
 
@@ -126,6 +144,9 @@ frappe.ui.form.on("Container Details", {
 		row.transporter = frm.doc.transporter
 		row.cargo = frm.doc.cargo
 		row.status = frm.doc.tracking_status
+		row.shipping_line = frm.doc.shipping_line
+		row.vessel = frm.doc.vessel_name
+		row.pod = frm.doc.discharge_port
 
 	}
 });

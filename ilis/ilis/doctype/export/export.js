@@ -100,7 +100,7 @@ frappe.ui.form.on('Export', {
 
 function show_container_dialog(frm) {
    frappe.prompt([
-      {'fieldname': 'booking_number', 'fieldtype': 'Link', 'label': 'Container Release', 'reqd': 1, 'options': 'Container Release'}  
+      {'fieldname': 'booking_number', 'fieldtype': 'Link', 'label': 'Cargo Tracking', 'reqd': 1, 'options': 'Cargo Tracking'}  
    ],
    function(booking_number){
       console.log(booking_number.booking_number);

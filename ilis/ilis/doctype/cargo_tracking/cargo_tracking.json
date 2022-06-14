@@ -65,6 +65,10 @@
   "gross_weight",
   "pcs",
   "section_break_47",
+  "shipping_line",
+  "vessel_name",
+  "discharge_port",
+  "section_break_62",
   "export_container",
   "loading_list",
   "amended_from"
@@ -166,6 +170,7 @@
   {
    "fieldname": "truck_container_section_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Truck Container Section"
   },
   {
@@ -363,7 +368,8 @@
   },
   {
    "fieldname": "section_break_47",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "hidden": 1
   },
   {
    "allow_bulk_edit": 1,
@@ -400,12 +406,33 @@
    "fieldtype": "Select",
    "label": "Tracking Status",
    "options": "\nArrived At the Border\nArrived at CFS\nFinished offloading\nStart Stuffing\nFinished Stuffing\nCFS Departure\nDelivered to Port\nVessel Departure\nOthers"
+  },
+  {
+   "fieldname": "shipping_line",
+   "fieldtype": "Link",
+   "label": "Shipping Line",
+   "options": "Shipping Line"
+  },
+  {
+   "fieldname": "vessel_name",
+   "fieldtype": "Data",
+   "label": "Vessel Name"
+  },
+  {
+   "fieldname": "discharge_port",
+   "fieldtype": "Link",
+   "label": "Discharge Port",
+   "options": "Port"
+  },
+  {
+   "fieldname": "section_break_62",
+   "fieldtype": "Section Break"
   }
  ],
  "in_create": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-06-10 06:23:37.038378",
+ "modified": "2022-06-14 11:43:21.953115",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Cargo Tracking",

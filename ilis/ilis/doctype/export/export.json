@@ -67,13 +67,13 @@
   "shipping_line",
   "vessel_name",
   "voyage_number",
+  "discharge_port",
+  "destination",
   "column_break_41",
   "loading_permission",
   "shipping_instruction_date",
   "port_of_loading",
   "vessel_departure_date",
-  "discharge_port",
-  "destination",
   "port_section",
   "container_delivery_to_port",
   "port_charges_date",
@@ -193,6 +193,7 @@
   {
    "fieldname": "truck_container_section_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Truck Container Section"
   },
   {
@@ -568,7 +569,6 @@
   {
    "fieldname": "container_details",
    "fieldtype": "Link",
-   "hidden": 1,
    "label": "Container Details",
    "options": "Container",
    "read_only": 1
@@ -576,7 +576,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2022-06-10 04:43:15.666732",
+ "modified": "2022-06-14 11:14:19.839823",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Export",

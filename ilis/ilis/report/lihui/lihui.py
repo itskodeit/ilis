@@ -218,6 +218,7 @@ def get_data(filters):
 		LEFT JOIN 
 			`tabExport` te ON ta.export_reference = te.name
 		where ta.loading_date BETWEEN %(from_date)s AND %(to_date)s
+		AND ta.docstatus !=2
 		order by ta.loading_date
 		"""+ where, where_filter, as_dict=1)
 	return data

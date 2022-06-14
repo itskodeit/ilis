@@ -93,39 +93,10 @@
    "type": "Link"
   },
   {
-   "dependencies": "Export",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Export Summary Report",
-   "link_to": "Export Summary Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "dependencies": "Export",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Export Sample Report",
-   "link_to": "Export Sample Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
    "hidden": 0,
    "is_query_report": 1,
    "label": "Container Lifecycle Report",
    "link_to": "Container Lifecycle Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Loading List Template",
-   "link_to": "Loading List Template",
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
@@ -184,7 +155,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-06-10 08:19:12.251174",
+ "modified": "2022-06-14 11:42:07.419389",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Abble Export",
