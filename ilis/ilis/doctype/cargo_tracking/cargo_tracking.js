@@ -54,6 +54,12 @@ frappe.ui.form.on('Cargo Tracking', {
 		});
 		refresh_field("export_container");
 	},
+	tracking_status: function(frm) {
+		$.each(frm.doc.containers_on_truck || [], function(i, d) {
+			if(!d.status) d.status = frm.doc.tracking_status;
+		});
+		refresh_field("containers_on_truck");
+	},
 
 });
 
@@ -144,6 +150,7 @@ frappe.ui.form.on("Container Details", {
 		row.transporter = frm.doc.transporter
 		row.cargo = frm.doc.cargo
 		row.status = frm.doc.tracking_status
+		row.shipper = frm.doc.exporter
 		row.shipping_line = frm.doc.shipping_line
 		row.vessel = frm.doc.vessel_name
 		row.pod = frm.doc.discharge_port
