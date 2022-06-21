@@ -29,6 +29,8 @@
   {
    "fieldname": "booking_no",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Booking No"
   },
   {
@@ -135,7 +137,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-03-16 10:47:58.671903",
+ "modified": "2022-06-20 21:19:36.742891",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container Booking",

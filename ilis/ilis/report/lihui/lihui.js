@@ -23,5 +23,11 @@ frappe.query_reports["LIHUI"] = {
 			"fieldtype": "Date",
 			"default": to_date
 		},
+		{
+			"fieldname":"customer",
+			"label": __("Customer"),
+			"fieldtype": "Link",
+			"options": "Customer"
+		},
 	]
 };

@@ -101,6 +101,7 @@
    "fieldname": "bl_number",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "BL Number"
   },
   {
@@ -406,6 +407,7 @@
    "allow_bulk_edit": 1,
    "fieldname": "export_container",
    "fieldtype": "Table",
+   "hidden": 1,
    "label": "Export Container",
    "options": "Container Export"
   },
@@ -504,8 +506,7 @@
   {
    "fieldname": "loading_list",
    "fieldtype": "Table",
-   "hidden": 1,
-   "label": "Loading List",
+   "label": "Export Loading List",
    "options": "Loading List"
   },
   {
@@ -576,7 +577,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2022-06-15 04:09:22.385964",
+ "modified": "2022-06-20 21:15:27.013150",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Export",

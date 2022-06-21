@@ -17,7 +17,8 @@ def execute(filters=None):
 	report_items = get_data(filters)
 	for d in report_items:
 		row = {}
-		row['booking_number'] = d.name
+		row['container_release'] = d.name
+		row['booking_number'] = d.booking_number
 		row['shipping_line'] = d.shipping_line
 		row['container_number'] = d.container_number
 
@@ -56,10 +57,16 @@ def execute(filters=None):
 def get_column():
 	return [
 		{
-			"fieldname":"booking_number",
-			"label": "Booking Number",
+			"fieldname":"container_release",
+			"label": "Container Release",
 			"fieldtype": "Link",
 			"options": "Container Release",
+			'width': 150
+		},
+		{
+			"fieldname":"booking_number",
+			"label": "Booking Number",
+			"fieldtype": "Data",
 			'width': 150
 		},
 		{
@@ -124,7 +131,20 @@ def get_data(filters):
 	where_filter = {"from_date": filters.from_date, "to_date": filters.to_date}
 	where = ""
 
-	data = frappe.db.sql("""select tce.container_number, tr.release_date, tr.cfs_storage_days,
+	if filters.booking_no:
+		where += ' AND '
+		where += 'tr.booking_number LIKE %(booking_no)s'
+		
+		where_filter.update({"booking_no": filters.booking_no})
+
+	if filters.container_no:
+		where += ' AND '
+		where += 'tce.container_number LIKE %(container_no)s'
+		
+		where_filter.update({"container_no": filters.container_no})
+
+	data = frappe.db.sql("""select tce.container_number,
+		tr.booking_number, tr.release_date, tr.cfs_storage_days,
 		tr.demmurage_count, tr.cfs_arrival_date, tr.name, tr.shipping_line, tr.free_days,
 		tr.free_days_stuffed, tr.stuffing_date, tr.free_days_empty
 
@@ -132,6 +152,7 @@ def get_data(filters):
 		LEFT JOIN
 			`tabContainer Release` tr ON tce.parent = tr.name
 		where tr.release_date BETWEEN %(from_date)s AND %(to_date)s
-		order by tr.release_date
-		"""+ where, where_filter, as_dict=1)
+		"""+ where +
+		""" order by tr.release_date
+		""", where_filter, as_dict=1)
 	return data

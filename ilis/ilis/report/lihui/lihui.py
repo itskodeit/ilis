@@ -102,7 +102,8 @@ def get_column():
 		{
 			"fieldname":"exporter",
 			"label": "Shipper",
-			"fieldtype": "Data",
+			"fieldtype": "Link",
+			"options": "Customer",
 			"width": 120,
 		},
 		{
@@ -204,7 +205,16 @@ def get_column():
 
 def get_data(filters):
 	where_filter = {"from_date": filters.from_date, "to_date": filters.to_date}
-	where = ""
+	where = ''
+
+	if filters.customer:
+		# if where == '':
+		# 	where = ' WHERE ';
+		# else:
+		where += ' AND '
+		where += 'ta.exporter = %(customer)s'
+		
+		where_filter.update({"customer": filters.customer})
 
 	data = frappe.db.sql("""select
 		ta.transporter, ta.drivers_name, ta.license_number, ta.truck, ta.trailer,
@@ -218,7 +228,7 @@ def get_data(filters):
 		LEFT JOIN 
 			`tabExport` te ON ta.export_reference = te.name
 		where ta.loading_date BETWEEN %(from_date)s AND %(to_date)s
-		AND ta.docstatus !=2
-		order by ta.loading_date
-		"""+ where, where_filter, as_dict=1)
+		AND ta.docstatus !=2 """+ where
+		+ """ order by ta.loading_date
+		""", where_filter, as_dict=1)
 	return data

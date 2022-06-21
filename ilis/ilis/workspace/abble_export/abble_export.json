@@ -78,6 +78,15 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Shipping Rate",
+   "link_to": "Shipping Rate",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Reports",
    "link_type": "DocType",
    "onboard": 0,
@@ -97,6 +106,16 @@
    "is_query_report": 1,
    "label": "Container Lifecycle Report",
    "link_to": "Container Lifecycle Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Shipping Rate",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Shipping Rates Report",
+   "link_to": "Shipping Rates Report",
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
@@ -155,7 +174,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-06-14 11:42:07.419389",
+ "modified": "2022-06-20 21:07:31.970607",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Abble Export",

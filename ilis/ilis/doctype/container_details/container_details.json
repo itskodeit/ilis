@@ -5,6 +5,9 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "reference_cargo_tracking",
+  "creation_document_no",
+  "export_reference",
   "container_number",
   "transporter",
   "cargo",
@@ -60,11 +63,28 @@
    "fieldname": "seal",
    "fieldtype": "Data",
    "label": "Seal"
+  },
+  {
+   "fieldname": "reference_cargo_tracking",
+   "fieldtype": "Link",
+   "label": "Reference Cargo Tracking",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "creation_document_no",
+   "fieldtype": "Dynamic Link",
+   "label": "Creation Document No",
+   "options": "reference_cargo_tracking"
+  },
+  {
+   "fieldname": "export_reference",
+   "fieldtype": "Data",
+   "label": "Export Reference"
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2022-06-10 06:15:32.093004",
+ "modified": "2022-06-15 14:24:18.485349",
  "modified_by": "Administrator",
  "module": "Ilis",
  "name": "Container Details",
