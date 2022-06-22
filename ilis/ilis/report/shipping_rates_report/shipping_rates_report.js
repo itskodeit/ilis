@@ -24,5 +24,17 @@ frappe.query_reports["Shipping Rates Report"] = {
 			"fieldtype": "Date",
 			"default": to_date
 		},
+/*		{
+			"fieldname":"booking_no",
+			"label": __("Booking Number"),
+			"fieldtype": "Data",
+			"width": "100"
+		},
+		{
+			"fieldname":"container_no",
+			"label": __("Container"),
+			"fieldtype": "Data",
+			"width": "100"
+		},*/
 	]
 };

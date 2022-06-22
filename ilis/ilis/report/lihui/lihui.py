@@ -208,9 +208,6 @@ def get_data(filters):
 	where = ''
 
 	if filters.customer:
-		# if where == '':
-		# 	where = ' WHERE ';
-		# else:
 		where += ' AND '
 		where += 'ta.exporter = %(customer)s'
 		
